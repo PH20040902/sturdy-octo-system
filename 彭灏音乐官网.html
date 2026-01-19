@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>彭灏 | 官方站点</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Google Fonts - 专业字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind 高级配置 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1A103D', // 深紫主色
+                        secondary: '#F8F9FF', // 浅灰背景
+                        accent: '#7B3FE4', // 高亮紫
+                        success: '#22C55E', // 成功绿
+                        danger: '#EF4444', // 危险红
+                        warning: '#F59E0B', // 警告黄
+                        neutral: '#E5E7EB', // 中性灰
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'card': '0 4px 20px rgba(0, 0, 0, 0.05)',
+                        'card-hover': '0 8px 30px rgba(123, 63, 228, 0.12)',
+                        'modal': '0 10px 50px rgba(0, 0, 0, 0.15)',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .backdrop-blur-sm {
+                backdrop-filter: blur(4px);
+            }
+            .text-gradient {
+                background-clip: text;
+                -webkit-background-clip: text;
+                color: transparent;
+                background-image: linear-gradient(to right, #7B3FE4, #A855F7);
+            }
+            .card-hover {
+                @apply transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1 active:translate-y-0;
+            }
+            .btn-primary {
+                @apply bg-accent text-white px-5 py-2.5 rounded-lg font-medium hover:bg-accent/90 hover:shadow-lg hover:shadow-accent/20 transition-all duration-200;
+            }
+            .btn-outline {
+                @apply border border-accent text-accent px-5 py-2.5 rounded-lg font-medium hover:bg-accent hover:text-white transition-all duration-200;
+            }
+            .btn-danger {
+                @apply bg-danger text-white px-4 py-2 rounded-lg font-medium hover:bg-danger/90 transition-all duration-200;
+            }
+            .menu-btn {
+                @apply w-full p-5 rounded-xl text-center card-hover bg-white border border-neutral/20;
+            }
+        }
+    </style>
+</head>
+<body class="bg-secondary font-inter text-primary min-h-screen flex flex-col antialiased">
+    <!-- 顶部导航 - 毛玻璃固定导航 -->
+    <header class="bg-white/80 backdrop-blur-sm shadow-sm sticky top-0 z-50 border-b border-neutral/10">
+        <div class="container mx-auto px-4 md:px-6 py-4 flex justify-between items-center">
+            <h1 class="text-[clamp(1.3rem,4vw,1.8rem)] font-bold">
+                <span class="text-gradient">彭灏</span>
+            </h1>
+            <div class="flex items-center gap-3">
+                <button id="toggle-admin" class="btn-outline text-sm md:text-base flex items-center gap-2">
+                    <i class="fa fa-cog"></i> 管理后台
+                </button>
+                <button id="back-to-front" class="btn-primary text-sm md:text-base flex items-center gap-2 hidden">
+                    <i class="fa fa-arrow-left"></i> 返回前台
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow container mx-auto px-4 md:px-6 py-8 md:py-12">
+        <!-- 前台展示区 -->
+        <section id="front-page" class="space-y-10 md:space-y-16">
+            <!-- 首页头部横幅 -->
+            <div class="w-full h-40 md:h-60 rounded-2xl bg-gradient-to-r from-primary to-accent flex items-center justify-center relative overflow-hidden mb-8">
+                <div class="absolute inset-0 opacity-20">
+                    <i class="fa fa-music text-[12rem] md:text-[20rem] text-white/20 absolute -top-10 -right-10"></i>
+                </div>
+                <div class="text-center z-10">
+                    <h2 class="text-[clamp(1.8rem,5vw,3rem)] font-bold text-white mb-2">彭灏</h2>
+                    <p class="text-white/90 text-sm md:text-base max-w-md mx-auto">用旋律记录故事，用音乐传递温度</p>
+                </div>
+            </div>
+
+            <!-- 彭灏音乐板块 - 高级卡片布局 -->
+            <div class="section">
+                <h2 class="text-xl md:text-2xl font-semibold mb-6 pb-2 border-b border-neutral/20 flex items-center gap-2">
+                    <i class="fa fa-music text-accent"></i> 彭灏音乐
+                </h2>
+                <div id="music-category" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-5">
+                    <button class="menu-btn" data-id="new-single">
+                        <i class="fa fa-music text-2xl text-accent mb-3"></i>
+                        <div class="font-medium">最新单曲</div>
+                    </button>
+                    <button class="menu-btn" data-id="album">
+                        <i class="fa fa-folder-open text-2xl text-accent mb-3"></i>
+                        <div class="font-medium">专辑全辑</div>
+                    </button>
+                    <button class="menu-btn" data-id="live">
+                        <i class="fa fa-video-camera text-2xl text-accent mb-3"></i>
+                        <div class="font-medium">Live现场</div>
+                    </button>
+                    <button class="menu-btn" data-id="ost">
+                        <i class="fa fa-film text-2xl text-accent mb-3"></i>
+                        <div class="font-medium">影视OST</div>
+                    </button>
+                    <button class="menu-btn" data-id="collab">
+                        <i class="fa fa-users text-2xl text-accent mb-3"></i>
+                        <div class="font-medium">合作单曲</div>
+                    </button>
+                </div>
+                <!-- 音乐板块内容展示区 -->
+                <div id="content-display" class="mt-6 p-4 bg-white rounded-2xl shadow-card min-h-[100px] flex items-center justify-center">
+                    <p class="text-gray-500 text-center">点击上方菜单查看对应内容</p>
+                </div>
+            </div>
+
+            <!-- 创作秘语板块 - 已添加【灵感随笔】子菜单 -->
+            <div class="section">
+                <h2 class="text-xl md:text-2xl font-semibold mb-6 pb-2 border-b border-neutral/20 flex items-center gap-2">
+                    <i class="fa fa-pencil text-accent"></i> 创作秘语
+                </h2>
+                <div id="creation-category" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-5">
+                    <button class="menu-btn" data-id="lyric-story">
+                        <i class="fa fa-book text-2xl text-accent mb-3"></i>
+                        <div class="font-medium">歌词故事</div>
+                    </button>
+                    <button class="menu-btn" data-id="behind-scene">
+                        <i class="fa fa-camera text-2xl text-accent mb-3"></i>
+                        <div class="font-medium">幕后花絮</div>
+                    </button>
+                    <button class="menu-btn" data-id="demo">
+                        <i class="fa fa-volume-up text-2xl text-accent mb-3"></i>
+                        <div class="font-medium">未公开Demo</div>
+                    </button>
+                    <!-- 新增【灵感随笔】子菜单 -->
+                    <button class="menu-btn" data-id="inspiration-note">
+                        <i class="fa fa-lightbulb-o text-2xl text-accent mb-3"></i>
+                        <div class="font-medium">灵感随笔</div>
+                    </button>
+                    <button class="menu-btn" data-id="interview">
+                        <i class="fa fa-microphone text-2xl text-accent mb-3"></i>
+                        <div class="font-medium">创作访谈</div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 官方通道板块 -->
+            <div class="section">
+                <h2 class="text-xl md:text-2xl font-semibold mb-6 pb-2 border-b border-neutral/20 flex items-center gap-2">
+                    <i class="fa fa-link text-accent"></i> 官方通道
+                </h2>
+                <div id="official-category" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-5">
+                    <button class="menu-btn" data-id="tour">
+                        <i class="fa fa-ticket text-2xl text-accent mb-3"></i>
+                        <div class="font-medium">巡演购票</div>
+                    </button>
+                    <button class="menu-btn" data-id="business">
+                        <i class="fa fa-handshake-o text-2xl text-accent mb-3"></i>
+                        <div class="font-medium">商务合作</div>
+                    </button>
+                    <button class="menu-btn" data-id="media">
+                        <i class="fa fa-bullhorn text-2xl text-accent mb-3"></i>
+                        <div class="font-medium">媒体邀约</div>
+                    </button>
+                    <button class="menu-btn" data-id="fan-group">
+                        <i class="fa fa-heart text-2xl text-accent mb-3"></i>
+                        <div class="font-medium">粉丝社群</div>
+                    </button>
+                    <button class="menu-btn" data-id="notice">
+                        <i class="fa fa-bell text-2xl text-accent mb-3"></i>
+                        <div class="font-medium">通知公告</div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 粉丝互动板块 - 高级卡片设计 -->
+            <div class="section">
+                <h2 class="text-xl md:text-2xl font-semibold mb-6 pb-2 border-b border-neutral/20 flex items-center gap-2">
+                    <i class="fa fa-comments text-accent"></i> 粉丝互动
+                </h2>
+                <div class="bg-white rounded-2xl shadow-card p-5 md:p-8">
+                    <h3 class="text-lg md:text-xl font-semibold mb-6 flex items-center gap-2">
+                        <span class="text-accent">💬</span> 粉丝留言 & 建议
+                    </h3>
+                    <form id="feedback-form" class="space-y-5 mb-8">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-600 mb-2">你的昵称 <span class="text-danger">*</span></label>
+                                <input type="text" id="feedback-name" class="w-full px-4 py-3 border border-neutral rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-600 mb-2">联系方式（选填）</label>
+                                <input type="text" id="feedback-contact" class="w-full px-4 py-3 border border-neutral rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-600 mb-2">留言内容 <span class="text-danger">*</span></label>
+                            <textarea id="feedback-content" rows="4" class="w-full px-4 py-3 border border-neutral rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all resize-none" required placeholder="写下你想对彭灏说的话..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary w-full md:w-auto flex items-center gap-2">
+                            <i class="fa fa-paper-plane"></i> 提交留言
+                        </button>
+                    </form>
+
+                    <div class="space-y-4" id="feedback-list">
+                        <div class="text-center py-10 text-gray-400">
+                            <i class="fa fa-comments text-5xl mb-4 text-neutral"></i>
+                            <p class="text-base">暂无留言，快来成为第一个留言的粉丝吧！</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 管理员后台 - 专业后台设计 -->
+        <section id="admin-panel" class="hidden space-y-8">
+            <!-- 登录模块 - 居中卡片 -->
+            <div id="admin-login" class="max-w-md mx-auto bg-white rounded-2xl shadow-modal p-8">
+                <h2 class="text-2xl font-bold text-center mb-8 text-gradient">管理员登录</h2>
+                <form id="login-form" class="space-y-5">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-600 mb-2">用户名</label>
+                        <div class="relative">
+                            <i class="fa fa-user absolute left-3 top-1/2 -translate-y-1/2 text-neutral"></i>
+                            <input type="text" id="admin-username" class="w-full pl-10 pr-4 py-3 border border-neutral rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all" required>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-600 mb-2">密码</label>
+                        <div class="relative">
+                            <i class="fa fa-lock absolute left-3 top-1/2 -translate-y-1/2 text-neutral"></i>
+                            <input type="password" id="admin-password" class="w-full pl-10 pr-4 py-3 border border-neutral rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-primary w-full flex items-center justify-center gap-2">
+                        <i class="fa fa-sign-in"></i> 登录后台
+                    </button>
+                </form>
+            </div>
+
+            <!-- 管理主界面 -->
+            <div id="admin-dashboard" class="hidden space-y-8">
+                <div class="flex flex-wrap justify-between items-center gap-4">
+                    <h2 class="text-2xl font-bold text-gradient">管理后台</h2>
+                    <button id="logout-btn" class="btn-outline flex items-center gap-2">
+                        <i class="fa fa-sign-out"></i> 退出登录
+                    </button>
+                </div>
+
+                <!-- 内容管理 - 高级表格 -->
+                <div class="bg-white rounded-2xl shadow-card p-6 md:p-8">
+                    <h3 class="text-lg font-semibold mb-6 flex items-center gap-2">
+                        <i class="fa fa-file-text text-accent"></i> 内容管理
+                    </h3>
+                    <div class="overflow-x-auto rounded-xl border border-neutral/20">
+                        <table class="min-w-full divide-y divide-neutral/20">
+                            <thead class="bg-secondary">
+                                <tr>
+                                    <th class="px-5 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">内容标题</th>
+                                    <th class="px-5 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">分类</th>
+                                    <th class="px-5 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">状态</th>
+                                    <th class="px-5 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody id="content-table" class="bg-white divide-y divide-neutral/20">
+                                <tr>
+                                    <td colspan="4" class="px-5 py-10 text-center text-gray-400">
+                                        <i class="fa fa-file-text text-4xl mb-3 text-neutral"></i>
+                                        <p>暂无内容，请点击下方按钮添加</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <button id="add-content" class="btn-primary mt-5 flex items-center gap-2">
+                        <i class="fa fa-plus"></i> 添加新内容
+                    </button>
+                </div>
+
+                <!-- 留言管理 -->
+                <div class="bg-white rounded-2xl shadow-card p-6 md:p-8">
+                    <h3 class="text-lg font-semibold mb-6 flex items-center gap-2">
+                        <i class="fa fa-comments text-accent"></i> 留言管理
+                    </h3>
+                    <div class="overflow-x-auto rounded-xl border border-neutral/20">
+                        <table class="min-w-full divide-y divide-neutral/20">
+                            <thead class="bg-secondary">
+                                <tr>
+                                    <th class="px-5 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">昵称</th>
+                                    <th class="px-5 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">联系方式</th>
+                                    <th class="px-5 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">留言内容</th>
+                                    <th class="px-5 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody id="feedback-table" class="bg-white divide-y divide-neutral/20">
+                                <tr>
+                                    <td colspan="4" class="px-5 py-10 text-center text-gray-400">
+                                        <i class="fa fa-comments text-4xl mb-3 text-neutral"></i>
+                                        <p>暂无粉丝留言</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <button id="delete-all-feedback" class="btn-danger mt-5 flex items-center gap-2">
+                        <i class="fa fa-trash"></i> 删除所有留言
+                    </button>
+                </div>
+
+                <!-- 操作日志 -->
+                <div class="bg-white rounded-2xl shadow-card p-6 md:p-8">
+                    <h3 class="text-lg font-semibold mb-6 flex items-center gap-2">
+                        <i class="fa fa-history text-accent"></i> 操作日志
+                    </h3>
+                    <div id="action-logs" class="space-y-3 max-h-60 overflow-y-auto p-3 border border-neutral/20 rounded-xl">
+                        <div class="text-center py-8 text-gray-400">
+                            <i class="fa fa-clock-o text-4xl mb-3 text-neutral"></i>
+                            <p>暂无操作日志</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-primary text-white/80 py-6 mt-12">
+        <div class="container mx-auto px-4 md:px-6 text-center text-sm">
+            <p>© 2026 彭灏 版权所有</p>
+        </div>
+    </footer>
+
+    <!-- 操作提示弹窗 - 高级样式 -->
+    <div id="toast" class="fixed bottom-6 right-6 px-5 py-3 rounded-lg shadow-lg transform translate-y-20 opacity-0 transition-all duration-300 z-50 flex items-center gap-3 max-w-xs">
+        <i id="toast-icon" class="fa fa-info-circle text-xl"></i>
+        <span id="toast-message" class="font-medium">提示信息</span>
+    </div>
+
+    <!-- 内容编辑弹窗 - 高级模态框 -->
+    <div id="content-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 hidden p-4">
+        <div class="bg-white rounded-2xl shadow-modal p-6 md:p-8 max-w-md w-full transform transition-all duration-300 scale-95 opacity-0" id="modal-content">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-xl font-semibold text-gradient" id="modal-title">编辑内容</h3>
+                <button id="close-modal" class="text-gray-400 hover:text-gray-600 transition-colors">
+                    <i class="fa fa-times text-xl"></i>
+                </button>
+            </div>
+            <form id="content-form" class="space-y-5">
+                <input type="hidden" id="content-id">
+                <div>
+                    <label class="block text-sm font-medium text-gray-600 mb-2">内容标题 <span class="text-danger">*</span></label>
+                    <input type="text" id="content-title" class="w-full px-4 py-3 border border-neutral rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-600 mb-2">所属分类 <span class="text-danger">*</span></label>
+                    <select id="content-category" class="w-full px-4 py-3 border border-neutral rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all" required>
+                        <option value="">请选择分类</option>
+                        <optgroup label="彭灏音乐">
+                            <option value="最新单曲">最新单曲</option>
+                            <option value="专辑全辑">专辑全辑</option>
+                            <option value="Live现场">Live现场</option>
+                            <option value="影视OST">影视OST</option>
+                            <option value="合作单曲">合作单曲</option>
+                        </optgroup>
+                        <optgroup label="创作秘语">
+                            <option value="歌词故事">歌词故事</option>
+                            <option value="幕后花絮">幕后花絮</option>
+                            <option value="未公开Demo">未公开Demo</option>
+                            <option value="灵感随笔">灵感随笔</option>
+                            <option value="创作访谈">创作访谈</option>
+                        </optgroup>
+                        <optgroup label="官方通道">
+                            <option value="巡演购票">巡演购票</option>
+                            <option value="商务合作">商务合作</option>
+                            <option value="媒体邀约">媒体邀约</option>
+                            <option value="粉丝社群">粉丝社群</option>
+                            <option value="通知公告">通知公告</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-600 mb-2">内容状态 <span class="text-danger">*</span></label>
+                    <select id="content-status" class="w-full px-4 py-3 border border-neutral rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all" required>
+                        <option value="published">已发布</option>
+                        <option value="unpublished">未发布</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-600 mb-2">内容详情</label>
+                    <textarea id="content-detail" rows="4" class="w-full px-4 py-3 border border-neutral rounded-lg focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all resize-none" placeholder="输入内容详情..."></textarea>
+                </div>
+                <div class="flex gap-3">
+                    <button type="submit" class="btn-primary flex-1 flex items-center justify-center gap-2">
+                        <i class="fa fa-save"></i> 保存
+                    </button>
+                    <button type="button" id="cancel-modal" class="btn-outline flex-1 flex items-center justify-center gap-2">
+                        <i class="fa fa-times"></i> 取消
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // 初始化本地存储
+        function initData() {
+            if (!localStorage.getItem('phmusic_contents')) localStorage.setItem('phmusic_contents', JSON.stringify([]));
+            if (!localStorage.getItem('phmusic_feedbacks')) localStorage.setItem('phmusic_feedbacks', JSON.stringify([]));
+            if (!localStorage.getItem('phmusic_logs')) localStorage.setItem('phmusic_logs', JSON.stringify([]));
+        }
+        initData();
+
+        // 高级提示弹窗工具函数
+        function showToast(message, type = 'info') {
+            const toast = document.getElementById('toast');
+            const icon = document.getElementById('toast-icon');
+            const toastMsg = document.getElementById('toast-message');
+            
+            toastMsg.textContent = message;
+            toast.className = 'fixed bottom-6 right-6 px-5 py-3 rounded-lg shadow-lg transform translate-y-0 opacity-100 transition-all duration-300 z-50 flex items-center gap-3 max-w-xs';
+            
+            if (type === 'success') {
+                toast.classList.add('bg-success', 'text-white');
+                icon.className = 'fa fa-check-circle text-xl';
+            } else if (type === 'error') {
+                toast.classList.add('bg-danger', 'text-white');
+                icon.className = 'fa fa-exclamation-circle text-xl';
+            } else if (type === 'warning') {
+                toast.classList.add('bg-warning', 'text-white');
+                icon.className = 'fa fa-exclamation-triangle text-xl';
+            } else {
+                toast.classList.add('bg-accent', 'text-white');
+                icon.className = 'fa fa-info-circle text-xl';
+            }
+            
+            setTimeout(() => {
+                toast.className = 'fixed bottom-6 right-6 px-5 py-3 rounded-lg shadow-lg transform translate-y-20 opacity-0 transition-all duration-300 z-50 flex items-center gap-3 max-w-xs';
+            }, 3000);
+        }
+
+        // 操作日志函数
+        function addLog(action, detail) {
+            const logs = JSON.parse(localStorage.getItem('phmusic_logs')) || [];
+            logs.push({
+                id: Date.now(),
+                action,
+                detail,
+                time: new Date().toLocaleString()
+            });
+            localStorage.setItem('phmusic_logs', JSON.stringify(logs));
+            renderLogs();
+        }
+
+        // 模态框动画控制
+        function openModal() {
+            document.getElementById('content-modal').classList.remove('hidden');
+            setTimeout(() => {
+                document.getElementById('modal-content').classList.remove('scale-95', 'opacity-0');
+                document.getElementById('modal-content').classList.add('scale-100', 'opacity-100');
+            }, 10);
+        }
+
+        function closeModal() {
+            document.getElementById('modal-content').classList.remove('scale-100', 'opacity-100');
+            document.getElementById('modal-content').classList.add('scale-95', 'opacity-0');
+            setTimeout(() => {
+                document.getElementById('content-modal').classList.add('hidden');
+            }, 300);
+        }
+
+        // 渲染前端内容展示区
+        function renderFrontContent(category) {
+            const contents = JSON.parse(localStorage.getItem('phmusic_contents')) || [];
+            const displayArea = document.getElementById('content-display');
+            
+            // 筛选对应分类的已发布内容
+            const filteredContents = contents.filter(item => item.category === category && item.status === 'published');
+            
+            if (filteredContents.length === 0) {
+                displayArea.innerHTML = '<p class="text-gray-500 text-center">暂无已发布内容</p>';
+                return;
+            }
+            
+            let html = '<div class="space-y-4 w-full">';
+            filteredContents.forEach(item => {
+                html += `
+                    <div class="p-4 border border-neutral/20 rounded-lg hover:shadow-md transition-shadow">
+                        <h3 class="font-bold text-lg text-primary">${item.title}</h3>
+                        <p class="text-gray-600 mt-2">${item.detail}</p>
+                        <p class="text-gray-400 text-xs mt-2">发布状态：已发布</p>
+                    </div>
+                `;
+            });
+            html += '</div>';
+            displayArea.innerHTML = html;
+        }
+
+        // 页面加载后初始化
+        document.addEventListener('DOMContentLoaded', () => {
+            // 菜单分类映射
+            const categoryMap = {
+                'new-single': '最新单曲',
+                'album': '专辑全辑',
+                'live': 'Live现场',
+                'ost': '影视OST',
+                'collab': '合作单曲',
+                'lyric-story': '歌词故事',
+                'behind-scene': '幕后花絮',
+                'demo': '未公开Demo',
+                'inspiration-note': '灵感随笔',
+                'interview': '创作访谈',
+                'tour': '巡演购票',
+                'business': '商务合作',
+                'media': '媒体邀约',
+                'fan-group': '粉丝社群',
+                'notice': '通知公告'
+            };
+
+            // 前台菜单点击事件（高亮+加载内容）
+            document.querySelectorAll('.menu-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // 高亮效果
+                    document.querySelectorAll('.menu-btn').forEach(b => {
+                        b.classList.remove('bg-accent', 'text-white');
+                        b.querySelector('i').classList.remove('text-white');
+                    });
+                    btn.classList.add('bg-accent', 'text-white');
+                    btn.querySelector('i').classList.add('text-white');
+
+                    // 加载对应内容
+                    const menuId = btn.dataset.id;
+                    const category = categoryMap[menuId];
+                    renderFrontContent(category);
+                    showToast(`已加载【${category}】的内容`, 'success');
+                });
+            });
+
+            // 前台留言提交
+            document.getElementById('feedback-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const name = document.getElementById('feedback-name').value;
+                const contact = document.getElementById('feedback-contact').value;
+                const content = document.getElementById('feedback-content').value;
+                
+                const feedbacks = JSON.parse(localStorage.getItem('phmusic_feedbacks')) || [];
+                const newFeedback = {
+                    id: Date.now(),
+                    name,
+                    contact,
+                    content,
+                    time: new Date().toISOString()
+                };
+                
+                feedbacks.push(newFeedback);
+                localStorage.setItem('phmusic_feedbacks', JSON.stringify(feedbacks));
+                addLog('新增留言', `粉丝 ${name} 提交了一条留言`);
+                
+                e.target.reset();
+                renderFeedbacks();
+                renderFeedbackTable();
+                showToast('留言提交成功！感谢你的支持～', 'success');
+            });
+
+            // 切换前后台
+            document.getElementById('toggle-admin').addEventListener('click', () => {
+                document.getElementById('front-page').classList.add('hidden');
+                document.getElementById('admin-panel').classList.remove('hidden');
+                document.getElementById('toggle-admin').classList.add('hidden');
+                document.getElementById('back-to-front').classList.remove('hidden');
+                showToast('进入管理后台，请先登录', 'info');
+            });
+
+            document.getElementById('back-to-front').addEventListener('click', () => {
+                document.getElementById('front-page').classList.remove('hidden');
+                document.getElementById('admin-panel').classList.add('hidden');
+                document.getElementById('toggle-admin').classList.remove('hidden');
+                document.getElementById('back-to-front').classList.add('hidden');
+                showToast('返回前台展示页', 'info');
+            });
+
+            // 管理员登录
+            document.getElementById('login-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const username = document.getElementById('admin-username').value;
+                const password = document.getElementById('admin-password').value;
+                
+                if (username === 'admin' && password === 'admin123') {
+                    document.getElementById('admin-login').classList.add('hidden');
+                    document.getElementById('admin-dashboard').classList.remove('hidden');
+                    renderContentTable();
+                    renderFeedbackTable();
+                    renderLogs();
+                    addLog('系统登录', `管理员 ${username} 登录了后台`);
+                    showToast('登录成功！欢迎回来～', 'success');
+                } else {
+                    showToast('用户名或密码错误，请重试', 'error');
+                }
+            });
+
+            // 退出登录
+            document.getElementById('logout-btn').addEventListener('click', () => {
+                document.getElementById('admin-dashboard').classList.add('hidden');
+                document.getElementById('admin-login').classList.remove('hidden');
+                document.getElementById('login-form').reset();
+                addLog('系统退出', '管理员退出了后台');
+                showToast('已成功退出登录', 'info');
+            });
+
+            // 添加内容按钮
+            document.getElementById('add-content').addEventListener('click', () => {
+                document.getElementById('modal-title').textContent = '添加新内容';
+                document.getElementById('content-form').reset();
+                document.getElementById('content-id').value = '';
+                openModal();
+            });
+
+            // 关闭弹窗
+            document.getElementById('close-modal').addEventListener('click', closeModal);
+            document.getElementById('cancel-modal').addEventListener('click', closeModal);
+
+            // 点击模态框外部关闭
+            document.getElementById('content-modal').addEventListener('click', (e) => {
+                if (e.target === document.getElementById('content-modal')) {
+                    closeModal();
+                }
+            });
+
+            // 保存内容
+            document.getElementById('content-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const id = document.getElementById('content-id').value;
+                const title = document.getElementById('content-title').value;
+                const category = document.getElementById('content-category').value;
+                const status = document.getElementById('content-status').value;
+                const detail = document.getElementById('content-detail').value;
+                
+                const contents = JSON.parse(localStorage.getItem('phmusic_contents')) || [];
+                
+                if (id) {
+                    // 编辑现有内容
+                    const index = contents.findIndex(item => item.id === parseInt(id));
+                    if (index !== -1) {
+                        const oldStatus = contents[index].status;
+                        contents[index] = { ...contents[index], title, category, status, detail };
+                        localStorage.setItem('phmusic_contents', JSON.stringify(contents));
+                        
+                        if (oldStatus !== status) {
+                            addLog(status === 'published' ? '发布内容' : '撤回内容', `内容《${title}》状态已改为${status === 'published' ? '已发布' : '未发布'}`);
+                            showToast(`内容《${title}》${status === 'published' ? '发布' : '撤回'}成功！`, 'success');
+                        } else {
+                            addLog('编辑内容', `编辑了内容《${title}》`);
+                            showToast('内容编辑成功！', 'success');
+                        }
+                    }
+                } else {
+                    // 添加新内容
+                    const newContent = {
+                        id: Date.now(),
+                        title,
+                        category,
+                        status,
+                        detail
+                    };
+                    contents.push(newContent);
+                    localStorage.setItem('phmusic_contents', JSON.stringify(contents));
+                    addLog('新增内容', `添加了新内容《${title}》`);
+                    showToast('内容添加成功！', 'success');
+                }
+                
+                closeModal();
+                renderContentTable();
+                // 新增/编辑后自动刷新前端对应分类内容
+                renderFrontContent(category);
+            });
+
+            // 删除所有留言
+            document.getElementById('delete-all-feedback').addEventListener('click', () => {
+                const feedbacks = JSON.parse(localStorage.getItem('phmusic_feedbacks')) || [];
+                if (feedbacks.length === 0) {
+                    showToast('当前没有留言可删除', 'info');
+                    return;
+                }
+                
+                if (confirm('确定要删除所有留言吗？此操作不可恢复！')) {
+                    localStorage.setItem('phmusic_feedbacks', JSON.stringify([]));
+                    addLog('批量删除', '删除了所有粉丝留言');
+                    renderFeedbackTable();
+                    renderFeedbacks();
+                    showToast('所有留言已删除！', 'warning');
+                }
+            });
+
+            // 编辑、切换状态、删除内容事件委托
+            document.addEventListener('click', (e) => {
+                // 编辑内容
+                if (e.target.closest('.edit-content')) {
+                    const id = parseInt(e.target.closest('.edit-content').dataset.id);
+                    const contents = JSON.parse(localStorage.getItem('phmusic_contents')) || [];
+                    const content = contents.find(item => item.id === id);
+                    
+                    if (content) {
+                        document.getElementById('modal-title').textContent = '编辑内容';
+                        document.getElementById('content-id').value = content.id;
+                        document.getElementById('content-title').value = content.title;
+                        document.getElementById('content-category').value = content.category;
+                        document.getElementById('content-status').value = content.status;
+                        document.getElementById('content-detail').value = content.detail;
+                        openModal();
+                    }
+                }
+
+                // 切换内容状态
+                if (e.target.closest('.toggle-status')) {
+                    const id = parseInt(e.target.closest('.toggle-status').dataset.id);
+                    const contents = JSON.parse(localStorage.getItem('phmusic_contents')) || [];
+                    const index = contents.findIndex(item => item.id === id);
+                    
+                    if (index !== -1) {
+                        const content = contents[index];
+                        const newStatus = content.status === 'published' ? 'unpublished' : 'published';
+                        
+                        // 模拟撤回失败场景
+                        if (newStatus === 'unpublished' && Math.random() > 0.7) {
+                            addLog('撤回失败', `内容《${content.title}》撤回失败，可能是网络问题`);
+                            showToast(`内容《${content.title}》撤回失败，请稍后重试`, 'error');
+                            return;
+                        }
+                        
+                        contents[index].status = newStatus;
+                        localStorage.setItem('phmusic_contents', JSON.stringify(contents));
+                        
+                        addLog(newStatus === 'published' ? '发布内容' : '撤回内容', `内容《${content.title}》状态已改为${newStatus === 'published' ? '已发布' : '未发布'}`);
+                        renderContentTable();
+                        showToast(`内容《${content.title}》${newStatus === 'published' ? '发布' : '撤回'}成功！`, 'success');
+                        // 状态切换后刷新前端内容
+                        renderFrontContent(content.category);
+                    }
+                }
+
+                // 删除内容
+                if (e.target.closest('.delete-content')) {
+                    const id = parseInt(e.target.closest('.delete-content').dataset.id);
+                    const contents = JSON.parse(localStorage.getItem('phmusic_contents')) || [];
+                    const index = contents.findIndex(item => item.id === id);
+                    
+                    if (index !== -1) {
+                        const title = contents[index].title;
+                        const category = contents[index].category;
+                        contents.splice(index, 1);
+                        localStorage.setItem('phmusic_contents', JSON.stringify(contents));
+                        addLog('删除内容', `删除了内容《${title}》`);
+                        renderContentTable();
+                        showToast(`内容《${title}》已删除！`, 'warning');
+                        // 删除后刷新前端内容
+                        renderFrontContent(category);
+                    }
+                }
+
+                // 删除单条留言
+                if (e.target.closest('.delete-feedback')) {
+                    const id = parseInt(e.target.closest('.delete-feedback').dataset.id);
+                    const feedbacks = JSON.parse(localStorage.getItem('phmusic_feedbacks')) || [];
+                    const index = feedbacks.findIndex(item => item.id === id);
+                    
+                    if (index !== -1) {
+                        const name = feedbacks[index].name;
+                        feedbacks.splice(index, 1);
+                        localStorage.setItem('phmusic_feedbacks', JSON.stringify(feedbacks));
+                        addLog('删除留言', `删除了粉丝 ${name} 的留言`);
+                        renderFeedbackTable();
+                        renderFeedbacks();
+                        showToast('留言已删除！', 'warning');
+                    }
+                }
+            });
+
+            // 初始化渲染
+            renderFeedbacks();
+            renderContentTable();
+            renderLogs();
+        });
+
+        // 渲染留言列表 - 高级卡片
+        function renderFeedbacks() {
+            const feedbacks = JSON.parse(localStorage.getItem('phmusic_feedbacks')) || [];
+            const list = document.getElementById('feedback-list');
+            list.innerHTML = '';
+            
+            if (feedbacks.length === 0) {
+                list.innerHTML = `
+                    <div class="text-center py-10 text-gray-400">
+                        <i class="fa fa-comments text-5xl mb-4 text-neutral"></i>
+                        <p class="text-base">暂无留言，快来成为第一个留言的粉丝吧！</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            feedbacks.forEach(item => {
+                const date = new Date(item.time).toLocaleString();
+                const card = document.createElement('div');
+                card.className = 'bg-secondary p-5 rounded-xl border border-neutral/20';
+                card.innerHTML = `
+                    <div class="flex justify-between items-start mb-3">
+                        <span class="font-medium text-accent">${item.name}</span>
+                        <span class="text-xs text-gray-400">${date}</span>
+                    </div>
+                    ${item.contact ? `<div class="text-sm text-gray-500 mb-3">联系方式：${item.contact}</div>` : ''}
+                    <div class="text-gray-700">${item.content}</div>
+                `;
+                list.appendChild(card);
+            });
+        }
+
+        // 渲染内容管理表格
+        function renderContentTable() {
+            const contents = JSON.parse(localStorage.getItem('phmusic_contents')) || [];
+            const table = document.getElementById('content-table');
+            table.innerHTML = '';
+            
+            if (contents.length === 0) {
+                table.innerHTML = `
+                    <tr>
+                        <td colspan="4" class="px-5 py-10 text-center text-gray-400">
+                            <i class="fa fa-file-text text-4xl mb-3 text-neutral"></i>
+                            <p>暂无内容，请点击下方按钮添加</p>
+                        </td>
+                    </tr>
+                `;
+                return;
+            }
+            
+            contents.forEach(item => {
+                const row = document.createElement('tr');
+                row.className = 'hover:bg-secondary/50 transition-colors';
+                row.innerHTML = `
+                    <td class="px-5 py-4 whitespace-nowrap font-medium">${item.title}</td>
+                    <td class="px-5 py-4 whitespace-nowrap text-gray-600">${item.category}</td>
+                    <td class="px-5 py-4 whitespace-nowrap">
+                        <span class="px-3 py-1 inline-flex text-xs leading-5 font-semibold rounded-full ${item.status === 'published' ? 'bg-success/10 text-success' : 'bg-warning/10 text-warning'}">
+                            ${item.status === 'published' ? '已发布' : '未发布'}
+                        </span>
+                    </td>
+                    <td class="px-5 py-4 whitespace-nowrap text-sm font-medium">
+                        <button class="text-accent hover:text-accent/80 mr-3 edit-content" data-id="${item.id}">
+                            <i class="fa fa-pencil mr-1"></i> 编辑
+                        </button>
+                        <button class="text-${item.status === 'published' ? 'warning' : 'success'} hover:opacity-80 mr-3 toggle-status" data-id="${item.id}">
+                            <i class="fa fa-${item.status === 'published' ? 'arrow-circle-down' : 'arrow-circle-up'} mr-1"></i> ${item.status === 'published' ? '撤回' : '发布'}
+                        </button>
+                        <button class="text-danger hover:text-danger/80 delete-content" data-id="${item.id}">
+                            <i class="fa fa-trash mr-1"></i> 删除
+                        </button>
+                    </td>
+                `;
+                table.appendChild(row);
+            });
+        }
+
+        // 渲染留言管理表格
+        function renderFeedbackTable() {
+            const feedbacks = JSON.parse(localStorage.getItem('phmusic_feedbacks')) || [];
+            const table = document.getElementById('feedback-table');
+            table.innerHTML = '';
+            
+            if (feedbacks.length === 0) {
+                table.innerHTML = `
+                    <tr>
+                        <td colspan="4" class="px-5 py-10 text-center text-gray-400">
+                            <i class="fa fa-comments text-4xl mb-3 text-neutral"></i>
+                            <p>暂无粉丝留言</p>
+                        </td>
+                    </tr>
+                `;
+                return;
+            }
+            
+            feedbacks.forEach(item => {
+                const row = document.createElement('tr');
+                row.className = 'hover:bg-secondary/50 transition-colors';
+                row.innerHTML = `
+                    <td class="px-5 py-4 whitespace-nowrap font-medium">${item.name}</td>
+                    <td class="px-5 py-4 whitespace-nowrap text-gray-600">${item.contact || '-'}</td>
+                    <td class="px-5 py-4 text-gray-700">${item.content}</td>
+                    <td class="px-5 py-4 whitespace-nowrap text-sm font-medium">
+                        <button class="text-danger hover:text-danger/80 delete-feedback" data-id="${item.id}">
+                            <i class="fa fa-trash mr-1"></i> 删除
+                        </button>
+                    </td>
+                `;
+                table.appendChild(row);
+            });
+        }
+
+        // 渲染操作日志
+        function renderLogs() {
+            const logs = JSON.parse(localStorage.getItem('phmusic_logs')) || [];
+            const logContainer = document.getElementById('action-logs');
+            logContainer.innerHTML = '';
+            
+            if (logs.length === 0) {
+                logContainer.innerHTML = `
+                    <div class="text-center py-8 text-gray-400">
+                        <i class="fa fa-clock-o text-4xl mb-3 text-neutral"></i>
+                        <p>暂无操作日志</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            logs.reverse().forEach(log => {
+                const logItem = document.createElement('div');
+                logItem.className = 'p-3 border-b border-neutral/20 last:border-0';
+                logItem.innerHTML = `
+                    <div class="flex justify-between items-center mb-1">
+                        <span class="font-medium text-primary">${log.action}</span>
+                        <span class="text-xs text-gray-400">${log.time}</span>
+                    </div>
+                    <div class="text-sm text-gray-600">${log.detail}</div>
+                `;
+                logContainer.appendChild(logItem);
+            });
+        }
+    </script>
+</body>
+</html>
