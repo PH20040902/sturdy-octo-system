@@ -1,104 +1,104 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>祝伯伯生日快乐</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Microsoft Yahei", "PingFang SC", system-ui, sans-serif;
+<<！doctype 超文本标记语言> 超文本标记语言>
+<超文本标记语言 朗="zh-CN">html lang="zh-CN">
+<头>头>
+<元 字符集="UTF-8"><元 字符集="UTF-8">
+<元 姓名="视口"内容="宽度=设备宽度，初始比例=1.0，最大比例=1.0，用户可缩放=no"><元 姓名="视口" 内容="宽度=设备宽度，初始比例=1.0，最大比例=1.0，用户可缩放=否">
+<标题>祝伯伯生日快乐</标题><标题>祝伯伯生日快乐</标题>
+<风格><风格>
+* {{
+页边距：0；边缘: 0;
+填充：0；填充: 0;
+框大小：边框框；箱体尺寸: 边框框;
+字体系列：“微软雅黑”、“仿冒SC”、system-ui、sans-serif；字体系列："微软雅黑"平方SC"，系统ui，无衬线；
         }
 
-        body {
-            width: 100%;
-            min-height: 100vh;
-            background:
-                radial-gradient(circle at 10% 20%, rgba(255, 215, 0, 0.08) 0%, transparent 20%),
-                radial-gradient(circle at 90% 10%, rgba(255, 107, 107, 0.08) 0%, transparent 22%),
-                linear-gradient(-45deg, #0b0c22, #161832, #1f2d4d, #152a50, #251d5a);
-            background-size: 400% 400%;
-            animation: bgMove 18s ease infinite;
-            overflow-x: hidden;
-            color: #ffffff;
-            text-align: center;
-            padding: 20px 14px;
+正文{身体 {
+宽容度：100%；宽度：100%；
+最低高度：100vh；min-height:100VH；
+背景：背景:
+径向梯度(10%-20%圆，RGBA(255，215，0，0.08)0%，透明20%)，radial-gradient(圆在10%20%，RGBA(255，215，0，0.08)0%，透明的20%)，
+径向梯度(圆在90%10%，rgba(255，107，107，0.08)0%，透明22%)，radial-gradient(圆在90%10%，RGBA(255，107，107，0.08)0%，透明的22%)，
+线性梯度(-45度，#0b0c22，#161832，#1f2d4d，#152a50，#251d5a)；线性梯度(-45deg，#0b0c22，#161832，#1f2d4d，#152a50，#251d5a);
+背景尺寸：400%400%；返回地面尺寸: 400% 400%;
+动画：bg移动18s轻松无限；动画：bgMove 18s缓解无限的；
+overflow-x：隐藏；overflow-x：隐藏的；
+脸色：#FFFFFF；脸色：#FFFFFF；
+文本对齐：居中；文本对齐: 中心;
+填料：20px14px；
         }
 
-        @keyframes bgMove {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+@keyframes bgMove{
+0%{后台位置：0%50%；}
+50%{背景位置：100%50%；}
+100%{后台位置：0%50%；}
         }
 
-        .container {
-            max-width: 820px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-            animation: pageFadeIn 1.2s ease;
+.容器{
+最大宽度：820px；
+margin:0 auto；
+位置：相对；
+Z指数：2；
+动画：pageFadeIn1.2s轻松；
         }
 
-        @keyframes pageFadeIn {
-            from { opacity: 0; transform: translateY(12px); }
-            to { opacity: 1; transform: translateY(0); }
+@keyframes pageFadeIn{
+from{opacity:0；transform:translateY(12px)；}
+到{opacity:1；transform:translateY(0)；}
         }
 
-        .title {
-            font-size: clamp(32px, 7vw, 52px);
-            margin: 16px 0;
-            background: linear-gradient(90deg, #ffd700, #ff6b6b, #ffe389, #ff6b6b);
-            background-size: 300%;
+.title{
+字体尺寸：卡箍(32px，7vw，52px)；
+余量：16px0；
+背景：线性梯度(90度，#ffd700，#ff6b6b，#ffe389，#ff6b6b)；
+背景尺寸：300%；
             -webkit-background-clip: text;
-            color: transparent;
-            animation: textShine 3.5s linear infinite;
-            font-weight: 800;
-            letter-spacing: 1px;
+颜色：透明；
+动画：textShine3.5s线性无限；
+font-weight:800；
+字母间距：1px；
         }
 
-        @keyframes textShine {
-            0% { background-position: 0%; }
-            100% { background-position: 300%; }
+@keyframes textShine{
+0%{后台位置：0%；}
+100%{后台位置：300%；}
         }
 
-        .sub-title {
-            font-size: clamp(16px, 3vw, 22px);
-            color: #ffedaa;
-            margin-bottom: 24px;
-            font-weight: 300;
+.副标题{
+字体尺寸：夹子(16px，3VW，22px)；
+颜色：#ffedaa；
+底边距：24px；
+font-weight:300；
         }
 
-        .cake-section {
-            position: relative;
-            display: inline-block;
-            margin: 24px 0;
-            cursor: pointer;
+.cake-section{
+位置：相对；
+显示：内联块；
+页边距：24px0；
+光标：指针；
         }
 
-        .cake-wrap {
-            position: relative;
-            padding: 22px 32px;
-            border-radius: 26px;
-            background: radial-gradient(circle, rgba(255, 215, 0, 0.14), transparent 72%);
+.cake-wrap{
+位置：相对；
+填充：22px32px；
+边界半径：26px；
+背景：径向梯度(圆形，rgba(255，215，0，0.14)，透明72%)；
         }
 
-        .cake-box {
-            font-size: clamp(96px, 16vw, 136px);
-            transition: transform 0.45s ease;
-            filter: drop-shadow(0 6px 14px rgba(255, 200, 80, 0.4));
+.cake-box{
+字体大小：卡箍(96px，16vw，136px)；
+过渡：转换0.45s轻松；
+滤镜：drop-shadow(06px14pxrgba(255，200，80，0.4))；
         }
 
-        .cake-box.blow {
-            animation: cakeShake 0.6s ease;
+.cake-box.blow{
+动画：cakeShake0.6s轻松；
         }
 
-        @keyframes cakeShake {
-            0%, 100% { transform: translateX(0) rotate(0deg); }
-            20% { transform: translateX(-10px) rotate(-2deg); }
-            40% { transform: translateX(10px) rotate(2deg); }
-            60% { transform: translateX(-8px) rotate(-1deg); }
+@keyframes cakeShake{
+0%，100%{transform:translateX(0)rotate(0deg)；}
+20%{transform:translateX(-10px)旋转(-2度)；}
+40%{transform:translateX(10px)旋转(2度)；}
+60%{transform:translateX(-8px)旋转(-1度)；}
             80% { transform: translateX(8px) rotate(1deg); }
         }
 
