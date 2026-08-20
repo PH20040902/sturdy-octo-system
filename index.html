@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<script>
+!(function(j,a,g){j.__itrace_conf = {bid:"f43basl8-6nq7l3w",version:'0.0.1',debug:true,ui:"",plugins:['jserror','api','performance','resource','flow','blank']};
+var b=a.createElement("script");var d=a.getElementsByTagName("script")[0];
+b.type="text/javascript";b.crossOrigin=true;b.async=true;
+b.onload=function(){j.__itrace&&j.__itrace.setReady()};
+d.parentNode.insertBefore(b,d);b.src=g})(window,document,"https://g.alicdn.com/woodpeckerx/itrace-next/itrace.life.js")
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>灏妍传媒-综合性传媒机构</title>
+<style>
+:root{
+--bg:#0a0e17;--bg2:#111827;--bg3:#1a2035;--card:#151c2e;--border:#2a3352;
+--gold:#f0b040;--gold2:#e8961e;--blue:#3b82f6;--blue2:#6366f1;--purple:#8b5cf6;
+--cyan:#22d3ee;--green:#34d399;--red:#ef4444;--txt:#e2e8f0;--txt2:#94a3b8;--txt3:#64748b;
+--grad1:linear-gradient(135deg,#f0b040,#e8961e,#f59e0b);
+--grad2:linear-gradient(135deg,#3b82f6,#6366f1);
+--grad3:linear-gradient(135deg,#8b5cf6,#ec4899);
+--grad4:linear-gradient(135deg,#22d3ee,#34d399);
+--shadow:0 4px 24px rgba(0,0,0,.4);--radius:12px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei",Helvetica,sans-serif;background:var(--bg);color:var(--txt);line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.section{padding:80px 0}
+.section-title{text-align:center;margin-bottom:48px}
+.section-title h2{font-size:36px;font-weight:700;background:linear-gradient(135deg,var(--gold),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:12px}
+.section-title p{color:var(--txt2);font-size:16px}
+.btn{display:inline-block;padding:12px 28px;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;transition:all .3s;border:none;outline:none}
+.btn-gold{background:var(--grad1);color:#1a1a2e}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(240,176,64,.4)}
+.btn-blue{background:var(--grad2);color:#fff}
+.btn-blue:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(59,130,246,.4)}
+.btn-outline{border:1px solid var(--border);color:var(--txt);background:transparent}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+.btn-sm{padding:6px 14px;font-size:13px;border-radius:6px}
+.btn-danger{background:var(--red);color:#fff}
+.btn-green{background:var(--green);color:#1a1a2e}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;transition:all .35s}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:rgba(240,176,64,.3)}
+/* NAV */
+.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(10,14,23,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(42,51,82,.5);transition:all .3s}
+.navbar .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:64px}
+.navbar .logo{display:flex;align-items:center;gap:10px;font-size:22px;font-weight:800}
+.navbar .logo .icon{width:36px;height:36px;background:var(--grad1);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;color:#1a1a2e}
+.navbar .nav-links{display:flex;gap:24px;align-items:center}
+.navbar .nav-links a{color:var(--txt2);font-size:14px;transition:color .3s;position:relative}
+.navbar .nav-links a:hover,.navbar .nav-links a.active{color:var(--gold)}
+.navbar .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--gold);transition:width .3s}
+.navbar .nav-links a:hover::after{width:100%}
+.navbar .nav-auth{display:flex;gap:12px;align-items:center}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+.hamburger span{width:24px;height:2px;background:var(--txt);transition:all .3s}
+.mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;background:var(--bg2);border-bottom:1px solid var(--border);padding:16px 24px;z-index:999}
+.mobile-menu.active{display:block}
+.mobile-menu a{display:block;padding:10px 0;color:var(--txt2);border-bottom:1px solid rgba(42,51,82,.3)}
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding-top:64px}
+#particleCanvas{position:absolute;top:0;left:0;width:100%;height:100%;z-index:0}
+.hero-content{position:relative;z-index:2;text-align:center;max-width:800px;padding:0 24px}
+.hero-content h1{font-size:52px;font-weight:800;line-height:1.2;margin-bottom:20px;background:linear-gradient(135deg,#f0b040,#fff,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:fadeInUp .8s ease}
+.hero-content .subtitle{font-size:20px;color:var(--txt2);margin-bottom:36px;animation:fadeInUp .8s ease .2s both}
+.hero-content .cta-group{display:flex;gap:16px;justify-content:center;margin-bottom:60px;animation:fadeInUp .8s ease .4s both}
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;animation:fadeInUp .8s ease .6s both}
+.hero-stats .stat{text-align:center}
+.hero-stats .stat .num{font-size:36px;font-weight:800;background:var(--grad1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-stats .stat .label{font-size:14px;color:var(--txt2);margin-top:4px}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+/* TIMELINE */
+.timeline{position:relative;max-width:700px;margin:0 auto}
+.timeline::before{content:'';position:absolute;left:20px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--gold),var(--blue))}
+.timeline-item{padding-left:56px;margin-bottom:36px;position:relative}
+.timeline-item .dot{position:absolute;left:12px;top:4px;width:18px;height:18px;border-radius:50%;background:var(--grad1);border:3px solid var(--bg)}
+.timeline-item h4{color:var(--gold);font-size:18px;margin-bottom:6px}
+.timeline-item p{color:var(--txt2);font-size:14px}
+/* TABS */
+.tabs{display:flex;gap:8px;justify-content:center;margin-bottom:32px;flex-wrap:wrap}
+.tab-btn{padding:10px 24px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--txt2);cursor:pointer;font-size:14px;transition:all .3s}
+.tab-btn.active{background:var(--grad1);color:#1a1a2e;border-color:transparent;font-weight:600}
+/* TALENT CARDS */
+.talent-card{text-align:center;padding:32px 20px}
+.talent-card .avatar{width:80px;height:80px;border-radius:50%;margin:0 auto 16px;background:var(--grad2);display:flex;align-items:center;justify-content:center;font-size:32px}
+.talent-card h4{font-size:16px;margin-bottom:4px}
+.talent-card .fans{color:var(--gold);font-size:14px;margin-bottom:8px}
+.talent-card .tags{display:flex;gap:6px;justify-content:center;flex-wrap:wrap}
+.talent-card .tag{padding:3px 10px;border-radius:20px;font-size:12px;background:rgba(59,130,246,.15);color:var(--blue)}
+/* FLOW */
+.flow-steps{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;margin-bottom:48px}
+.flow-step{text-align:center;padding:20px 12px;background:var(--card);border-radius:var(--radius);border:1px solid var(--border);position:relative}
+.flow-step .step-num{width:36px;height:36px;border-radius:50%;background:var(--grad1);color:#1a1a2e;display:flex;align-items:center;justify-content:center;font-weight:700;margin:0 auto 12px}
+.flow-step h5{font-size:14px;margin-bottom:6px}
+.flow-step p{font-size:12px;color:var(--txt3)}
+/* FORM */
+.form-group{margin-bottom:18px}
+.form-group label{display:block;font-size:14px;color:var(--txt2);margin-bottom:6px}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:12px 16px;background:var(--bg3);border:1px solid var(--border);border-radius:8px;color:var(--txt);font-size:14px;outline:none;transition:border-color .3s}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--gold)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+/* NEWS */
+.news-card{cursor:pointer}
+.news-card .news-img{height:180px;background:var(--grad2);border-radius:8px;margin-bottom:16px;display:flex;align-items:center;justify-content:center;font-size:48px}
+.news-card h4{font-size:16px;margin-bottom:8px;line-height:1.4}
+.news-card .meta{display:flex;gap:16px;font-size:13px;color:var(--txt3)}
+.news-card .summary{font-size:14px;color:var(--txt2);margin-top:8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+/* COMMUNITY */
+.post-item{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:12px;transition:all .3s}
+.post-item:hover{border-color:rgba(240,176,64,.3)}
+.post-item .post-info h4{font-size:15px;margin-bottom:4px}
+.post-item .post-info .meta{font-size:13px;color:var(--txt3)}
+.post-item .post-actions{display:flex;gap:12px;align-items:center}
+.post-item .post-actions span{font-size:13px;color:var(--txt3);cursor:pointer}
+.post-item .post-actions span:hover{color:var(--gold)}
+/* FOOTER */
+.footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 0 24px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:40px;margin-bottom:36px}
+.footer h4{font-size:16px;margin-bottom:16px;color:var(--txt)}
+.footer p,.footer a{font-size:14px;color:var(--txt2);line-height:2}
+.footer a:hover{color:var(--gold)}
+.footer-bottom{border-top:1px solid var(--border);padding-top:20px;text-align:center;font-size:13px;color:var(--txt3)}
+/* MODAL */
+.modal-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.7);z-index:2000;align-items:center;justify-content:center}
+.modal-overlay.active{display:flex}
+.modal{background:var(--bg2);border:1px solid var(--border);border-radius:16px;width:90%;max-width:480px;max-height:85vh;overflow-y:auto;padding:36px;position:relative}
+.modal-lg{max-width:900px}
+.modal .close-btn{position:absolute;top:16px;right:16px;width:32px;height:32px;border-radius:50%;background:var(--bg3);border:1px solid var(--border);color:var(--txt2);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px}
+.modal .close-btn:hover{background:var(--red);color:#fff}
+.modal h3{font-size:22px;margin-bottom:24px;text-align:center}
+/* ADMIN */
+.admin-layout{display:grid;grid-template-columns:220px 1fr;min-height:calc(100vh - 64px)}
+.admin-sidebar{background:var(--bg2);border-right:1px solid var(--border);padding:24px 0}
+.admin-sidebar a{display:block;padding:12px 24px;color:var(--txt2);font-size:14px;transition:all .3s;border-left:3px solid transparent}
+.admin-sidebar a.active,.admin-sidebar a:hover{color:var(--gold);background:rgba(240,176,64,.06);border-left-color:var(--gold)}
+.admin-content{padding:32px}
+.admin-content h2{font-size:22px;margin-bottom:24px}
+.stat-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:32px}
+.stat-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-align:center}
+.stat-card .val{font-size:28px;font-weight:700;color:var(--gold)}
+.stat-card .lbl{font-size:13px;color:var(--txt3);margin-top:4px}
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse}
+table th,table td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--border);font-size:14px}
+table th{color:var(--txt3);font-weight:600;font-size:13px}
+table td{color:var(--txt)}
+.status-badge{padding:3px 10px;border-radius:20px;font-size:12px;font-weight:600}
+.status-active{background:rgba(52,211,153,.15);color:var(--green)}
+.status-banned{background:rgba(239,68,68,.15);color:var(--red)}
+.status-pending{background:rgba(240,176,64,.15);color:var(--gold)}
+.status-offline{background:rgba(100,116,139,.15);color:var(--txt3)}
+.status-muted{background:rgba(139,92,246,.15);color:var(--purple)}
+/* TOAST */
+.toast{position:fixed;top:80px;right:24px;background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:14px 24px;z-index:3000;transform:translateX(120%);transition:transform .4s;font-size:14px;box-shadow:var(--shadow)}
+.toast.show{transform:translateX(0)}
+.toast.success{border-color:var(--green)}
+.toast.error{border-color:var(--red)}
+/* SCROLL REVEAL */
+.reveal{opacity:0;transform:translateY(40px);transition:all .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+/* RESPONSIVE */
+@media(max-width:1024px){
+.grid-4{grid-template-columns:repeat(2,1fr)}
+.flow-steps{grid-template-columns:repeat(3,1fr)}
+.footer-grid{grid-template-columns:repeat(2,1fr)}
+.admin-layout{grid-template-columns:1fr}
+.admin-sidebar{display:flex;overflow-x:auto;padding:12px}
+.admin-sidebar a{white-space:nowrap;padding:8px 16px;border-left:none;border-bottom:2px solid transparent}
+.admin-sidebar a.active{border-bottom-color:var(--gold)}
+.stat-cards{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+.navbar .nav-links{display:none}
+.hamburger{display:flex}
+.hero-content h1{font-size:32px}
+.hero-stats{grid-template-columns:repeat(2,1fr)}
+.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}
+.flow-steps{grid-template-columns:repeat(2,1fr)}
+.form-row{grid-template-columns:1fr}
+.footer-grid{grid-template-columns:1fr}
+.section{padding:48px 0}
+.section-title h2{font-size:28px}
+}
+</style>
+</head>
+<body>
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+<div class="nav-inner">
+<a href="#home" class="logo"><span class="icon">灏</span>灏妍传媒</a>
+<div class="nav-links" id="navLinks">
+<a href="#home" class="active">首页</a>
+<a href="#about">关于我们</a>
+<a href="#business">核心业务</a>
+<a href="#talents">达人矩阵</a>
+<a href="#cooperation">品牌合作</a>
+<a href="#creator">创作者平台</a>
+<a href="#datacenter">数据中心</a>
+<a href="#news">新闻中心</a>
+<a href="#community">社区互动</a>
+<a href="#recruit">人才招聘</a>
+<a href="#contact">联系我们</a>
+</div>
+<div class="nav-auth" id="navAuth">
+<button class="btn btn-outline btn-sm" onclick="openModal('loginModal')">登录</button>
+<button class="btn btn-gold btn-sm" onclick="openModal('registerModal')">注册</button>
+</div>
+<div class="hamburger" onclick="toggleMobile()"><span></span><span></span><span></span></div>
+</div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+<a href="#home" onclick="toggleMobile()">首页</a>
+<a href="#about" onclick="toggleMobile()">关于我们</a>
+<a href="#business" onclick="toggleMobile()">核心业务</a>
+<a href="#talents" onclick="toggleMobile()">达人矩阵</a>
+<a href="#cooperation" onclick="toggleMobile()">品牌合作</a>
+<a href="#creator" onclick="toggleMobile()">创作者平台</a>
+<a href="#datacenter" onclick="toggleMobile()">数据中心</a>
+<a href="#news" onclick="toggleMobile()">新闻中心</a>
+<a href="#community" onclick="toggleMobile()">社区互动</a>
+<a href="#recruit" onclick="toggleMobile()">人才招聘</a>
+<a href="#contact" onclick="toggleMobile()">联系我们</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+<canvas id="particleCanvas"></canvas>
+<div class="hero-content">
+<h1>灏妍传媒 · 让影响力触手可及</h1>
+<p class="subtitle">全链路数字传媒生态 · 直播 · 短视频 ·影视 · 音乐发行</p>
+<div class="cta-group">
+<a href="#business" class="btn btn-gold">了解更多</a>
+<a href="#cooperation" class="btn btn-outline">商务合作</a>
+</div>
+<div class="hero-stats">
+<div class="stat"><div class="num" data-count="50">0</div><div class="label">签约达人</div></div>
+<div class="stat"><div class="num" data-count="56" data-suffix="万+">0</div><div class="label">全网粉丝</div></div>
+<div class="stat"><div class="num" data-count="2">0</div><div class="label">合作品牌</div></div>
+<div class="stat"><div class="num" data-count="50" data-suffix="+">0</div><div class="label">内容创作</div></div>
+</div>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+<div class="container">
+<div class="section-title reveal"><h2>关于我们</h2><p>衡阳灏妍时代互动文化传媒有限公司 · 全链路数字传媒生态构建者</p></div>
+<div class="grid-2 reveal">
+<div>
+<h3 style="font-size:20px;margin-bottom:16px;color:var(--gold)">公司简介</h3>
+<p style="color:var(--txt2);font-size:15px;line-height:1.8;margin-bottom:20px">灏妍传媒成立于2026年，位于湖南衡阳，是一家专注于互联网内容生态的专业文化传媒公司。公司以"互联网+艺人经纪"为核心运营模式，业务涵盖直播运营、短视频制作、电商直播、品牌整合营销、艺人经纪及知识服务等领域。</p>
+<p style="color:var(--txt2);font-size:15px;line-height:1.8;margin-bottom:20px">公司拥有成熟的达人孵化体系和金字塔式成长模型，签约达人矩阵超50人，全网粉丝总量突破5678万，合作品牌超2家，累计内容创作超500+。</p>
+<div class="grid-3" style="margin-top:24px">
+<div style="text-align:center;padding:16px;background:var(--card);border-radius:var(--radius)"><div style="font-size:24px;color:var(--gold);font-weight:700">2026</div><div style="font-size:13px;color:var(--txt3)">成立年份</div></div>
+<div style="text-align:center;padding:16px;background:var(--card);border-radius:var(--radius)"><div style="font-size:24px;color:var(--blue);font-weight:700">12+</div><div style="font-size:13px;color:var(--txt3)">专业团队</div></div>
+<div style="text-align:center;padding:16px;background:var(--card);border-radius:var(--radius)"><div style="font-size:24px;color:var(--green);font-weight:700">18</div><div style="font-size:13px;color:var(--txt3)">内容垂类</div></div>
+</div>
+</div>
+<div>
+<h3 style="font-size:20px;margin-bottom:16px;color:var(--gold)">发展历程</h3>
+<div class="timeline">
+<div class="timeline-item"><div class="dot"></div><h4>2026年2月 · 创立启航</h4><p>灏妍传媒在衡阳正式成立，聚焦直播与短视频赛道，签约首批50位达人</p></div>
+<div class="timeline-item"><div class="dot"></div><h4>2026年5月 · 业务突破</h4><p>拓展电商直播业务</p></div>
+<div class="timeline-item"><div class="dot"></div><h4>2026年7月 · 生态扩展</h4><p>启动品牌整合营销与知识服务</p></div>
+<div class="timeline-item"><div class="dot"></div><h4>2026年8月 · 新征程</h4><p>签约达人超100人，构建全链路数字传媒生态</p></div>
+</div>
+</div>
+</div>
+<div class="grid-3 reveal" style="margin-top:48px">
+<div class="card" style="text-align:center"><div style="font-size:36px;margin-bottom:12px">🎯</div><h4 style="margin-bottom:8px;color:var(--gold)">使命</h4><p style="font-size:14px;color:var(--txt2)">以内容为驱动，以技术为引擎，让每一位创作者的影响力触手可及</p></div>
+<div class="card" style="text-align:center"><div style="font-size:36px;margin-bottom:12px">🔭</div><h4 style="margin-bottom:8px;color:var(--blue)">愿景</h4><p style="font-size:14px;color:var(--txt2)">成为中国最具影响力的全链路数字传媒生态平台</p></div>
+<div class="card" style="text-align:center"><div style="font-size:36px;margin-bottom:12px">💎</div><h4 style="margin-bottom:8px;color:var(--purple)">价值观</h4><p style="font-size:14px;color:var(--txt2)">创新驱动 · 内容为王 · 合作共赢 · 长期主义</p></div>
+</div>
+</div>
+</section>
+
+<!-- BUSINESS -->
+<section class="section" id="business" style="background:var(--bg2)">
+<div class="container">
+<div class="section-title reveal"><h2>核心业务</h2><p>八大业务板块，构建全链路数字传媒生态</p></div>
+<div class="grid-4 reveal">
+<div class="card" style="text-align:center"><div style="font-size:40px;margin-bottom:16px">📡</div><h4 style="margin-bottom:8px">直播运营</h4><p style="font-size:13px;color:var(--txt2)">专业直播孵化体系，5000+主播矩阵，覆盖娱乐、才艺、户外等多品类</p></div>
+<div class="card" style="text-align:center"><div style="font-size:40px;margin-bottom:16px">🎬</div><h4 style="margin-bottom:8px">短视频制作</h4><p style="font-size:13px;color:var(--txt2)">18大垂类内容覆盖，年产50万+条，矩阵粉丝超10亿</p></div>
+<div class="card" style="text-align:center"><div style="font-size:40px;margin-bottom:16px">🛒</div><h4 style="margin-bottom:8px">电商直播</h4><p style="font-size:13px;color:var(--txt2)">抖音/淘宝/视频号全域覆盖，一站式电商直播解决方案</p></div>
+<div class="card" style="text-align:center"><div style="font-size:40px;margin-bottom:16px">⭐</div><h4 style="margin-bottom:8px">艺人经纪</h4><p style="font-size:13px;color:var(--txt2)">金字塔孵化体系，从素人到顶流的一站式艺人成长路径</p></div>
+<div class="card" style="text-align:center"><div style="font-size:40px;margin-bottom:16px">📣</div><h4 style="margin-bottom:8px">品牌营销</h4><p style="font-size:13px;color:var(--txt2)">整合营销方案，2000+品牌服务经验，8000+项目案例</p></div>
+<div class="card" style="text-align:center"><div style="font-size:40px;margin-bottom:16px">📊</div><h4 style="margin-bottom:8px">信息流投放</h4><p style="font-size:13px;color:var(--txt2)">精准投放+数据驱动，覆盖主流社交平台，ROI最大化</p></div>
+<div class="card" style="text-align:center"><div style="font-size:40px;margin-bottom:16px">🏪</div><h4 style="margin-bottom:8px">店铺代运营</h4><p style="font-size:13px;color:var(--txt2)">全平台店铺托管服务，从账号搭建到流量变现一站式服务</p></div>
+<div class="card" style="text-align:center"><div style="font-size:40px;margin-bottom:16px">📚</div><h4 style="margin-bottom:8px">知识服务</h4><p style="font-size:13px;color:var(--txt2)">在线教育+知识付费，携手名师达人打造优质课程体系</p></div>
+</div>
+</div>
+</section>
+
+<!-- TALENTS -->
+<section class="section" id="talents">
+<div class="container">
+<div class="section-title reveal"><h2>达人矩阵</h2><p>500+签约达人，全网粉丝超百万</p></div>
+<div class="reveal">
+<div class="tabs" id="talentTabs">
+<button class="tab-btn active" data-cat="all">全部</button>
+<button class="tab-btn" data-cat="top">头部达人</button>
+<button class="tab-btn" data-cat="live">直播主播</button>
+<button class="tab-btn" data-cat="video">短视频创作者</button>
+<button class="tab-btn" data-cat="ecom">电商主播</button>
+</div>
+<div style="margin-bottom:24px;text-align:center"><input type="text" id="talentSearch" placeholder="搜索达人昵称..." style="padding:10px 20px;background:var(--bg3);border:1px solid var(--border);border-radius:8px;color:var(--txt);width:300px;outline:none"></div>
+<div class="grid-4" id="talentGrid"></div>
+</div>
+</div>
+</section>
+
+<!-- COOPERATION -->
+<section class="section" id="cooperation" style="background:var(--bg2)">
+<div class="container">
+<div class="section-title reveal"><h2>品牌合作</h2><p>一站式新媒体整合营销服务，助力品牌增长</p></div>
+<div class="flow-steps reveal">
+<div class="flow-step"><div class="step-num">1</div><h5>需求沟通</h5><p>深入了解品牌需求与目标</p></div>
+<div class="flow-step"><div class="step-num">2</div><h5>方案定制</h5><p>制定专属营销方案</p></div>
+<div class="flow-step"><div class="step-num">3</div><h5>达人匹配</h5><p>精准匹配优质达人资源</p></div>
+<div class="flow-step"><div class="step-num">4</div><h5>内容创作</h5><p>专业团队内容制作</p></div>
+<div class="flow-step"><div class="step-num">5</div><h5>投放执行</h5><p>全渠道精准投放</p></div>
+<div class="flow-step"><div class="step-num">6</div><h5>数据复盘</h5><p>效果评估与优化</p></div>
+</div>
+<div class="grid-3 reveal" style="margin-bottom:48px">
+<div class="card" style="text-align:center"><div style="font-size:28px;color:var(--gold);font-weight:700;margin-bottom:8px">2000+</div><div style="font-size:14px;color:var(--txt2)">服务品牌</div></div>
+<div class="card" style="text-align:center"><div style="font-size:28px;color:var(--blue);font-weight:700;margin-bottom:8px">8000+</div><div style="font-size:14px;color:var(--txt2)">执行项目</div></div>
+<div class="card" style="text-align:center"><div style="font-size:28px;color:var(--green);font-weight:700;margin-bottom:8px">24大类</div><div style="font-size:14px;color:var(--txt2)">覆盖行业</div></div>
+</div>
+<div class="reveal" style="max-width:600px;margin:0 auto">
+<h3 style="text-align:center;margin-bottom:24px;font-size:20px">合作意向提交</h3>
+<form id="coopForm">
+<div class="form-row"><div class="form-group"><label>品牌名称</label><input type="text" id="coopBrand" required placeholder="请输入品牌名称"></div><div class="form-group"><label>联系人</label><input type="text" id="coopName" required placeholder="请输入联系人"></div></div>
+<div class="form-row"><div class="form-group"><label>联系电话</label><input type="tel" id="coopPhone" required placeholder="请输入联系电话"></div><div class="form-group"><label>合作类型</label><select id="coopType"><option>直播带货</option><option>短视频推广</option><option>品牌代言</option><option>整合营销</option><option>其他</option></select></div></div>
+<div class="form-group"><label>合作需求描述</label><textarea id="coopDesc" rows="4" placeholder="请简要描述您的合作需求..."></textarea></div>
+<button type="submit" class="btn btn-gold" style="width:100%">提交合作意向</button>
+</form>
+</div>
+</div>
+</section>
+
+<!-- CREATOR -->
+<section class="section" id="creator">
+<div class="container">
+<div class="section-title reveal"><h2>创作者平台</h2><p>加入灏妍，开启你的创作之旅</p></div>
+<div class="grid-4 reveal" style="margin-bottom:48px">
+<div class="card" style="text-align:center;border-top:3px solid var(--gold)"><div style="font-size:32px;margin-bottom:12px">🚀</div><h4 style="margin-bottom:8px">流量扶持</h4><p style="font-size:13px;color:var(--txt2)">新入驻创作者享受专属流量扶持计划</p></div>
+<div class="card" style="text-align:center;border-top:3px solid var(--blue)"><div style="font-size:32px;margin-bottom:12px">🎓</div><h4 style="margin-bottom:8px">专业培训</h4><p style="font-size:13px;color:var(--txt2)">一对一运营指导，系统化创作培训</p></div>
+<div class="card" style="text-align:center;border-top:3px solid var(--green)"><div style="font-size:32px;margin-bottom:12px">💰</div><h4 style="margin-bottom:8px">商业变现</h4><p style="font-size:13px;color:var(--txt2)">多元化变现渠道，广告/带货/打赏</p></div>
+<div class="card" style="text-align:center;border-top:3px solid var(--purple)"><div style="font-size:32px;margin-bottom:12px">🤝</div><h4 style="margin-bottom:8px">专属经纪</h4><p style="font-size:13px;color:var(--txt2)">配备专属经纪人，全程陪伴成长</p></div>
+</div>
+<div class="reveal" style="max-width:600px;margin:0 auto">
+<h3 style="text-align:center;margin-bottom:24px;font-size:20px">创作者入驻申请</h3>
+<form id="creatorForm">
+<div class="form-row"><div class="form-group"><label>姓名</label><input type="text" id="crName" required placeholder="请输入真实姓名"></div><div class="form-group"><label>联系电话</label><input type="tel" id="crPhone" required placeholder="请输入联系电话"></div></div>
+<div class="form-row"><div class="form-group"><label>特长领域</label><select id="crSkill"><option>颜值/时尚</option><option>搞笑/剧情</option><option>美食</option><option>音乐/舞蹈</option><option>游戏/二次元</option><option>知识/教育</option><option>生活/旅行</option><option>其他</option></select></div><div class="form-group"><label>主要平台</label><select id="crPlatform"><option>抖音</option><option>快手</option><option>视频号</option><option>B站</option><option>小红书</option><option>其他</option></select></div></div>
+<div class="form-group"><label>平台主页链接</label><input type="text" id="crLink" placeholder="请输入您的平台主页链接"></div>
+<button type="submit" class="btn btn-blue" style="width:100%">提交入驻申请</button>
+</form>
+</div>
+</div>
+</section>
+
+<!-- DATA CENTER -->
+<section class="section" id="datacenter" style="background:var(--bg2)">
+<div class="container">
+<div class="section-title reveal"><h2>数据中心</h2><p>实时数据大屏，洞察增长趋势</p></div>
+<div class="stat-cards reveal">
+<div class="stat-card"><div class="val" data-count="186" data-suffix="亿">0</div><div class="lbl">总播放量</div></div>
+<div class="stat-card"><div class="val" data-count="10" data-suffix="亿+">0</div><div class="lbl">全网粉丝</div></div>
+<div class="stat-card"><div class="val" data-count="3200" data-suffix="万">0</div><div class="lbl">月活用户</div></div>
+<div class="stat-card"><div class="val" data-count="2000" data-suffix="+">0</div><div class="lbl">合作品牌</div></div>
+</div>
+<div class="grid-2 reveal">
+<div class="card"><h4 style="margin-bottom:16px;font-size:16px">月度内容产出趋势</h4><canvas id="chartBar" height="200"></canvas></div>
+<div class="card"><h4 style="margin-bottom:16px;font-size:16px">内容垂类分布</h4><canvas id="chartPie" height="200"></canvas></div>
+</div>
+</div>
+</section>
+
+<!-- NEWS -->
+<section class="section" id="news">
+<div class="container">
+<div class="section-title reveal"><h2>新闻中心</h2><p>了解灏妍传媒最新动态</p></div>
+<div class="tabs reveal">
+<button class="tab-btn active" data-ncat="all">全部</button>
+<button class="tab-btn" data-ncat="company">公司动态</button>
+<button class="tab-btn" data-ncat="industry">行业资讯</button>
+<button class="tab-btn" data-ncat="media">媒体报道</button>
+</div>
+<div class="grid-3 reveal" id="newsGrid"></div>
+</div>
+</section>
+
+<!-- COMMUNITY -->
+<section class="section" id="community" style="background:var(--bg2)">
+<div class="container">
+<div class="section-title reveal"><h2>社区互动</h2><p>加入灏妍社区，分享你的想法</p></div>
+<div class="reveal" style="margin-bottom:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+<div class="tabs" style="margin-bottom:0">
+<button class="tab-btn active" data-pcat="all">全部</button>
+<button class="tab-btn" data-pcat="hot">最热</button>
+<button class="tab-btn" data-pcat="latest">最新</button>
+</div>
+<button class="btn btn-gold btn-sm" onclick="openPostModal()">✍️ 发布帖子</button>
+</div>
+<div id="postList" class="reveal"></div>
+</div>
+</section>
+
+<!-- RECRUIT -->
+<section class="section" id="recruit">
+<div class="container">
+<div class="section-title reveal"><h2>人才招聘</h2><p>加入灏妍，共创未来</p></div>
+<div class="grid-4 reveal" style="margin-bottom:48px">
+<div class="card" style="text-align:center"><div style="font-size:28px;margin-bottom:8px">🏥</div><h4 style="font-size:14px">五险一金</h4></div>
+<div class="card" style="text-align:center"><div style="font-size:28px;margin-bottom:8px">🏖️</div><h4 style="font-size:14px">带薪年假</h4></div>
+<div class="card" style="text-align:center"><div style="font-size:28px;margin-bottom:8px">⏰</div><h4 style="font-size:14px">弹性工作</h4></div>
+<div class="card" style="text-align:center"><div style="font-size:28px;margin-bottom:8px">🎉</div><h4 style="font-size:14px">团建活动</h4></div>
+</div>
+<div class="reveal" style="margin-bottom:48px">
+<h3 style="font-size:20px;margin-bottom:20px;text-align:center">热招职位</h3>
+<div id="jobList">
+<div class="post-item"><div class="post-info"><h4>直播运营专员</h4><div class="meta">运营部 · 衡阳 · 全职</div></div><button class="btn btn-blue btn-sm" onclick="openJobApply('直播运营专员')">投递简历</button></div>
+<div class="post-item"><div class="post-info"><h4>短视频编导</h4><div class="meta">内容部 · 衡阳 · 全职</div></div><button class="btn btn-blue btn-sm" onclick="openJobApply('短视频编导')">投递简历</button></div>
+<div class="post-item"><div class="post-info"><h4>电商直播主播</h4><div class="meta">电商部 · 衡阳 · 全职</div></div><button class="btn btn-blue btn-sm" onclick="openJobApply('电商直播主播')">投递简历</button></div>
+<div class="post-item"><div class="post-info"><h4>品牌策划经理</h4><div class="meta">市场部 · 衡阳 · 全职</div></div><button class="btn btn-blue btn-sm" onclick="openJobApply('品牌策划经理')">投递简历</button></div>
+<div class="post-item"><div class="post-info"><h4>达人经纪人</h4><div class="meta">经纪部 · 衡阳 · 全职</div></div><button class="btn btn-blue btn-sm" onclick="openJobApply('达人经纪人')">投递简历</button></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact" style="background:var(--bg2)">
+<div class="container">
+<div class="section-title reveal"><h2>联系我们</h2><p>期待与您的合作</p></div>
+<div class="grid-2 reveal">
+<div>
+<div class="card" style="margin-bottom:20px"><h4 style="margin-bottom:12px;color:var(--gold)">📍 公司名称</h4><p style="font-size:14px;color:var(--txt2)">衡阳灏妍时代互动文化传媒有限公司</p></div>
+<div class="card" style="margin-bottom:20px"><h4 style="margin-bottom:12px;color:var(--blue)">📍 公司地址</h4><p style="font-size:14px;color:var(--txt2)">湖南省衡阳市衡阳县开洪路11号403室</p></div>
+<div class="card" style="margin-bottom:20px"><h4 style="margin-bottom:12px;color:var(--green)">📞 联系方式</h4><p style="font-size:14px;color:var(--txt2)">电话：0734-XXXX-XXXX<br>邮箱：haoyanmedia0604@foxmail.com<br>微信：暂不便公示</p></div>
+<div class="card"><h4 style="margin-bottom:12px;color:var(--purple)">🌐 社交媒体</h4><p style="font-size:14px;color:var(--txt2)">抖音 · 快手 · 视频号 · B站 · 小红书 · 微博</p></div>
+</div>
+<div>
+<h3 style="margin-bottom:20px;font-size:18px">在线咨询</h3>
+<form id="contactForm">
+<div class="form-row"><div class="form-group"><label>姓名</label><input type="text" id="ctName" required placeholder="您的姓名"></div><div class="form-group"><label>联系电话</label><input type="tel" id="ctPhone" required placeholder="您的电话"></div></div>
+<div class="form-group"><label>咨询类型</label><select id="ctType"><option>商务合作</option><option>达人入驻</option><option>求职咨询</option><option>媒体采访</option><option>其他</option></select></div>
+<div class="form-group"><label>咨询内容</label><textarea id="ctMsg" rows="4" required placeholder="请输入您的咨询内容..."></textarea></div>
+<button type="submit" class="btn btn-gold" style="width:100%">提交咨询</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div><h4 style="display:flex;align-items:center;gap:8px"><span style="width:28px;height:28px;background:var(--grad1);border-radius:6px;display:inline-flex;align-items:center;justify-content:center;font-size:14px;color:#1a1a2e">灏</span>灏妍传媒</h4><p style="margin-top:12px;font-size:14px;line-height:1.8">衡阳灏妍时代互动文化传媒有限公司<br>全链路数字传媒生态构建者<br>让影响力触手可及</p></div>
+<div><h4>快速链接</h4><a href="#about">关于我们</a><br><a href="#business">核心业务</a><br><a href="#talents">达人矩阵</a><br><a href="#cooperation">品牌合作</a><br><a href="#recruit">人才招聘</a></div>
+<div><h4>服务支持</h4><a href="#creator">创作者入驻</a><br><a href="#community">社区互动</a><br><a href="#contact">联系我们</a><br><a href="#datacenter">数据中心</a></div>
+<div><h4>法律信息</h4><a href="javascript:void(0)" onclick="showLegal('terms')">法律声明</a><br><a href="javascript:void(0)" onclick="showLegal('privacy')">隐私政策</a><br><a href="javascript:void(0)" onclick="showLegal('disclaimer')">免责声明</a></div>
+<div><h4>友情链接</h4><a href="http://www.kulemi.com/" target="_blank">酷乐米</a></div>
+</div>
+<div class="footer-bottom">© 2026 衡阳灏妍时代互动文化传媒有限公司 版权所有</div>
+</div>
+</footer>
+
+<!-- MODALS -->
+<div class="modal-overlay" id="loginModal"><div class="modal"><button class="close-btn" onclick="closeModal('loginModal')">✕</button><h3>登录灏妍传媒</h3><form id="loginForm"><div class="form-group"><label>用户名</label><input type="text" id="loginUser" required placeholder="请输入用户名"></div><div class="form-group"><label>密码</label><input type="password" id="loginPass" required placeholder="请输入密码"></div><button type="submit" class="btn btn-gold" style="width:100%">登录</button><p style="text-align:center;margin-top:16px;font-size:14px;color:var(--txt3)">还没有账号？<a href="javascript:void(0)" style="color:var(--gold)" onclick="closeModal('loginModal');openModal('registerModal')">立即注册</a></p></form></div></div>
+<div class="modal-overlay" id="registerModal"><div class="modal"><button class="close-btn" onclick="closeModal('registerModal')">✕</button><h3>注册灏妍账号</h3><form id="registerForm"><div class="form-group"><label>用户名</label><input type="text" id="regUser" required placeholder="请输入用户名"></div><div class="form-group"><label>手机号</label><input type="tel" id="regPhone" required placeholder="请输入手机号"></div><div class="form-group"><label>验证码</label><div style="display:flex;gap:12px"><input type="text" id="regCode" required placeholder="请输入验证码" style="flex:1"><button type="button" class="btn btn-outline btn-sm" id="sendCodeBtn" onclick="sendCode()">发送验证码</button></div></div><div class="form-group"><label>密码</label><input type="password" id="regPass" required placeholder="请输入密码（至少6位）"></div><div class="form-group"><label>确认密码</label><input type="password" id="regPass2" required placeholder="请再次输入密码"></div><button type="submit" class="btn btn-gold" style="width:100%">注册</button><p style="text-align:center;margin-top:16px;font-size:14px;color:var(--txt3)">已有账号？<a href="javascript:void(0)" style="color:var(--gold)" onclick="closeModal('registerModal');openModal('loginModal')">立即登录</a></p></form></div></div>
+<div class="modal-overlay" id="postModal"><div class="modal"><button class="close-btn" onclick="closeModal('postModal')">✕</button><h3>发布帖子</h3><form id="postForm"><div class="form-group"><label>标题</label><input type="text" id="postTitle" required placeholder="请输入帖子标题"></div><div class="form-group"><label>内容</label><textarea id="postContent" rows="5" required placeholder="请输入帖子内容..."></textarea></div><button type="submit" class="btn btn-gold" style="width:100%">发布</button></form></div></div>
+<div class="modal-overlay" id="newsDetailModal"><div class="modal modal-lg"><button class="close-btn" onclick="closeModal('newsDetailModal')">✕</button><div id="newsDetailContent"></div></div></div>
+<div class="modal-overlay" id="jobModal"><div class="modal"><button class="close-btn" onclick="closeModal('jobModal')">✕</button><h3>投递简历 - <span id="jobTitle"></span></h3><form id="jobForm"><div class="form-row"><div class="form-group"><label>姓名</label><input type="text" id="jobName" required></div><div class="form-group"><label>联系电话</label><input type="tel" id="jobPhone" required></div></div><div class="form-group"><label>邮箱</label><input type="email" id="jobEmail" required></div><div class="form-group"><label>个人简介</label><textarea id="jobIntro" rows="4" required placeholder="请简要介绍您的工作经历和优势..."></textarea></div><button type="submit" class="btn btn-gold" style="width:100%">提交简历</button></form></div></div>
+<div class="modal-overlay" id="legalModal"><div class="modal modal-lg"><button class="close-btn" onclick="closeModal('legalModal')">✕</button><div id="legalContent"></div></div></div>
+<div class="modal-overlay" id="adminModal"><div class="modal modal-lg" style="max-width:1100px"><button class="close-btn" onclick="closeModal('adminModal')">✕</button><div id="adminContent"></div></div></div>
+<div class="modal-overlay" id="userModal"><div class="modal"><button class="close-btn" onclick="closeModal('userModal')">✕</button><div id="userContent"></div></div></div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ===== DATA STORE (LocalStorage Workflow Engine) ===== */
+const DB={
+get(k,d){try{const v=localStorage.getItem('hy_'+k);return v?JSON.parse(v):d}catch(e){return d}},
+set(k,v){localStorage.setItem('hy_'+k,JSON.stringify(v))},
+init(){
+if(!this.get('users'))this.set('users',[{id:1,username:'admin',password:'admin123',phone:'13800000000',role:'admin',status:'active',created:'2026-01-01'}]);
+if(!this.get('posts'))this.set('posts',[
+{id:1,title:'欢迎来到灏妍传媒社区！',content:'这里是灏妍传媒官方社区，欢迎大家分享创作心得、行业见解和有趣的故事。让我们一起构建优质的内容生态！',author:'admin',time:'2026-08-01 10:00',likes:128,comments:36,status:'online',top:true},
+{id:2,title:'新手主播如何快速起号？',content:'分享几个实用的起号技巧：1.找准定位 2.坚持日更 3.互动引导 4.蹭热点话题 5.优化封面标题',author:'创作达人小王',time:'2026-08-10 14:30',likes:89,comments:24,status:'online',top:false},
+{id:3,title:'电商直播选品心得分享',content:'选品是电商直播的核心，好的选品能带来更高的转化率。分享一下我的选品方法论...',author:'带货达人小李',time:'2026-08-15 09:20',likes:67,comments:18,status:'online',top:false}
+]);
+if(!this.get('talents'))this.set('talents',[
+{id:1,name:'彭灏',cat:'top',fans:'10万+',tags:['音乐','影视','知识'],status:'online'},
+{id:2,name:'搞笑大壮',cat:'top',fans:'8.3万+',tags:['搞笑','剧情','段子'],status:'online'},
+{id:3,name:'美食家阿福',cat:'video',fans:'7万+',tags:['美食','探店','烹饪'],status:'online'},
+{id:4,name:'音乐精灵Luna',cat:'live',fans:'6.7万+',tags:['音乐','翻唱','直播'],status:'online'},
+{id:5,name:'舞蹈女王Coco',cat:'live',fans:'5.8万+',tags:['舞蹈','才艺','互动'],status:'online'},
+{id:6,name:'游戏大神Zero',cat:'video',fans:'5.3万+',tags:['游戏','电竞','解说'],status:'online'},
+{id:7,name:'带货女王Mia',cat:'ecom',fans:'3.8万+',tags:['带货','美妆','穿搭'],status:'online'},
+{id:8,name:'知识博主Dr.Chen',cat:'video',fans:'3万+',tags:['知识','教育','科普'],status:'online'},
+{id:9,name:'旅行达人小风',cat:'video',fans:'2.8万+',tags:['旅行','Vlog','户外'],status:'online'},
+{id:10,name:'母婴专家安安',cat:'ecom',fans:'2.5万+',tags:['母婴','亲子','好物'],status:'online'},
+{id:11,name:'健身教练Max',cat:'live',fans:'1.9万+',tags:['健身','运动','健康'],status:'online'},
+{id:12,name:'二次元小萌',cat:'live',fans:'1.5万+',tags:['二次元','Cosplay','动漫'],status:'online'}
+]);
+if(!this.get('news'))this.set('news',[
+{id:1,title:'灏妍传媒签约达人突破5000人',cat:'company',date:'2026-08-15',summary:'灏妍传媒达人矩阵持续扩大，签约达人正式突破5000人大关，全网粉丝总量超10亿。',content:'灏妍传媒达人矩阵持续扩大，签约达人正式突破5000人大关。公司通过金字塔式孵化体系，成功培养了大批优质创作者，全网粉丝总量超10亿。未来，灏妍传媒将继续深耕内容生态，为更多创作者提供成长平台。',status:'online'},
+{id:2,title:'2026年短视频行业趋势报告发布',cat:'industry',date:'2026-08-10',summary:'报告显示，短视频用户规模持续增长，内容电商成为新增长引擎。',content:'2026年短视频行业趋势报告显示，短视频用户规模持续增长，内容电商成为新增长引擎。直播电商、知识付费、本地生活等细分赛道呈现多元化发展态势。灏妍传媒积极布局各赛道，抢占行业先机。',status:'online'},
+{id:3,title:'灏妍传媒荣获"年度最佳MCN机构"称号',cat:'media',date:'2026-08-05',summary:'在2026中国新媒体峰会上，灏妍传媒凭借出色的内容创作能力和商业变现能力，荣获"年度最佳MCN机构"称号。',content:'在2026中国新媒体峰会上，灏妍传媒凭借出色的内容创作能力和商业变现能力，荣获"年度最佳MCN机构"称号。这是行业对灏妍传媒多年来深耕内容生态的充分肯定。',status:'online'},
+{id:4,title:'灏妍传媒电商直播GMV再创新高',cat:'company',date:'2026-07-28',summary:'灏妍传媒电商直播业务持续发力，单月GMV突破2亿元，创历史新高。',content:'灏妍传媒电商直播业务持续发力，单月GMV突破2亿元，创历史新高。公司通过精准选品、专业主播培训和全渠道流量运营，为品牌方提供了高效的电商直播解决方案。',status:'online'},
+{id:5,title:'短视频内容创作的未来方向',cat:'industry',date:'2026-07-20',summary:'AI辅助创作、互动视频、竖屏短剧等新兴形态正在重塑短视频内容格局。',content:'AI辅助创作、互动视频、竖屏短剧等新兴形态正在重塑短视频内容格局。灏妍传媒积极拥抱技术变革，探索AI+内容创作的新模式，为创作者赋能。',status:'online'},
+{id:6,title:'灏妍传媒创作者训练营正式开营',cat:'company',date:'2026-07-15',summary:'灏妍传媒首届创作者训练营正式开营，100位新晋创作者参加为期一个月的系统培训。',content:'灏妍传媒首届创作者训练营正式开营，100位新晋创作者参加为期一个月的系统培训。训练营涵盖内容策划、拍摄技巧、剪辑制作、运营推广等全方位课程，助力创作者快速成长。',status:'online'}
+]);
+if(!this.get('coops'))this.set('coops',[]);
+if(!this.get('messages'))this.set('messages',[]);
+if(!this.get('logs'))this.set('logs',[]);
+if(!this.get('announcements'))this.set('announcements',['欢迎加入灏妍传媒社区！请遵守社区规范，文明交流。']);
+if(!this.get('sensitiveWords'))this.set('sensitiveWords',['违禁词1','违禁词2']);
+}
+};
+DB.init();
+
+/* ===== AUTH ===== */
+let currentUser=DB.get('currentUser',null);
+function updateNav(){
+const el=document.getElementById('navAuth');
+if(currentUser){
+el.innerHTML=`<span style="color:var(--txt2);font-size:14px">👤 ${currentUser.username}</span>
+${currentUser.role==='admin'?'<button class="btn btn-gold btn-sm" onclick="openAdmin()">管理后台</button>':''}
+<button class="btn btn-outline btn-sm" onclick="openUserCenter()">个人中心</button>
+<button class="btn btn-outline btn-sm" onclick="logout()">退出</button>`;
+}else{
+el.innerHTML=`<button class="btn btn-outline btn-sm" onclick="openModal('loginModal')">登录</button><button class="btn btn-gold btn-sm" onclick="openModal('registerModal')">注册</button>`;
+}
+}
+function login(u,p){
+const users=DB.get('users');
+const user=users.find(x=>x.username===u&&x.password===p);
+if(!user)return toast('用户名或密码错误','error');
+if(user.status==='banned')return toast('该账号已被封禁','error');
+currentUser=user;DB.set('currentUser',user);updateNav();closeModal('loginModal');
+addLog('用户登录',user.username);toast('欢迎回来，'+user.username+'！','success');
+}
+function logout(){currentUser=null;DB.set('currentUser',null);updateNav();toast('已退出登录','success')}
+document.getElementById('loginForm').onsubmit=e=>{e.preventDefault();login(document.getElementById('loginUser').value,document.getElementById('loginPass').value)};
+document.getElementById('registerForm').onsubmit=e=>{
+e.preventDefault();
+const u=document.getElementById('regUser').value,p=document.getElementById('regPass').value,p2=document.getElementById('regPass2').value,ph=document.getElementById('regPhone').value;
+if(p!==p2)return toast('两次密码不一致','error');
+if(p.length<6)return toast('密码至少6位','error');
+const users=DB.get('users');
+if(users.find(x=>x.username===u))return toast('用户名已存在','error');
+const nu={id:Date.now(),username:u,password:p,phone:ph,role:'user',status:'active',created:new Date().toLocaleDateString()};
+users.push(nu);DB.set('users',users);
+currentUser=nu;DB.set('currentUser',nu);updateNav();closeModal('registerModal');
+addLog('新用户注册',u);toast('注册成功，欢迎加入灏妍传媒！','success');
+};
+let codeTimer;
+function sendCode(){
+const btn=document.getElementById('sendCodeBtn');let s=60;
+btn.disabled=true;btn.textContent=s+'s';
+codeTimer=setInterval(()=>{s--;btn.textContent=s+'s';if(s<=0){clearInterval(codeTimer);btn.disabled=false;btn.textContent='发送验证码'}},1000);
+toast('验证码已发送（模拟）','success');
+}
+
+/* ===== MODAL ===== */
+function openModal(id){document.getElementById(id).classList.add('active')}
+function closeModal(id){document.getElementById(id).classList.remove('active')}
+document.querySelectorAll('.modal-overlay').forEach(m=>{m.addEventListener('click',e=>{if(e.target===m)m.classList.remove('active')})});
+
+/* ===== TOAST ===== */
+function toast(msg,type='success'){
+const t=document.getElementById('toast');t.textContent=msg;t.className='toast show '+type;
+setTimeout(()=>t.classList.remove('show'),3000);
+}
+
+/* ===== PARTICLES ===== */
+const canvas=document.getElementById('particleCanvas'),ctx=canvas.getContext('2d');
+let particles=[];
+function initParticles(){
+canvas.width=window.innerWidth;canvas.height=window.innerHeight;
+particles=[];
+for(let i=0;i<80;i++){
+particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:Math.random()*2+1,vx:(Math.random()-.5)*.5,vy:(Math.random()-.5)*.5,o:Math.random()*.5+.2});
+}
+}
+function drawParticles(){
+ctx.clearRect(0,0,canvas.width,canvas.height);
+particles.forEach(p=>{
+p.x+=p.vx;p.y+=p.vy;
+if(p.x<0||p.x>canvas.width)p.vx*=-1;
+if(p.y<0||p.y>canvas.height)p.vy*=-1;
+ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+ctx.fillStyle=`rgba(240,176,64,${p.o})`;ctx.fill();
+});
+for(let i=0;i<particles.length;i++){
+for(let j=i+1;j<particles.length;j++){
+const dx=particles[i].x-particles[j].x,dy=particles[i].y-particles[j].y,d=Math.sqrt(dx*dx+dy*dy);
+if(d<120){ctx.beginPath();ctx.moveTo(particles[i].x,particles[i].y);ctx.lineTo(particles[j].x,particles[j].y);ctx.strokeStyle=`rgba(59,130,246,${.15*(1-d/120)})`;ctx.stroke()}
+}
+}
+requestAnimationFrame(drawParticles);
+}
+initParticles();drawParticles();
+window.addEventListener('resize',initParticles);
+
+/* ===== SCROLL REVEAL ===== */
+const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+/* ===== COUNTER ANIMATION ===== */
+const counterObserver=new IntersectionObserver(entries=>{
+entries.forEach(e=>{
+if(e.isIntersecting&&!e.target.dataset.done){
+e.target.dataset.done='1';
+const target=parseInt(e.target.dataset.count),suffix=e.target.dataset.suffix||'';
+let cur=0;const step=Math.ceil(target/60);
+const timer=setInterval(()=>{cur+=step;if(cur>=target){cur=target;clearInterval(timer)}e.target.textContent=cur+suffix},25);
+}
+});
+},{threshold:.5});
+document.querySelectorAll('[data-count]').forEach(el=>counterObserver.observe(el));
+
+/* ===== MOBILE MENU ===== */
+function toggleMobile(){document.getElementById('mobileMenu').classList.toggle('active')}
+
+/* ===== NAV SCROLL ===== */
+window.addEventListener('scroll',()=>{
+const links=document.querySelectorAll('.nav-links a');
+let cur='';
+document.querySelectorAll('section[id]').forEach(s=>{if(window.scrollY>=s.offsetTop-100)cur=s.id});
+links.forEach(a=>{a.classList.toggle('active',a.getAttribute('href')==='#'+cur)});
+});
+
+/* ===== TALENTS ===== */
+function renderTalents(cat='all',search=''){
+const talents=DB.get('talents').filter(t=>t.status==='online');
+const filtered=talents.filter(t=>(cat==='all'||t.cat===cat)&&t.name.includes(search));
+document.getElementById('talentGrid').innerHTML=filtered.map(t=>`
+<div class="card talent-card"><div class="avatar">👤</div><h4>${t.name}</h4><div class="fans">粉丝 ${t.fans}</div><div class="tags">${t.tags.map(g=>`<span class="tag">${g}</span>`).join('')}</div></div>`).join('');
+}
+document.getElementById('talentTabs').addEventListener('click',e=>{
+if(e.target.classList.contains('tab-btn')){
+document.querySelectorAll('#talentTabs .tab-btn').forEach(b=>b.classList.remove('active'));
+e.target.classList.add('active');renderTalents(e.target.dataset.cat,document.getElementById('talentSearch').value);
+}
+});
+document.getElementById('talentSearch').addEventListener('input',e=>{
+const active=document.querySelector('#talentTabs .tab-btn.active');
+renderTalents(active.dataset.cat,e.target.value);
+});
+renderTalents();
+
+/* ===== NEWS ===== */
+function renderNews(cat='all'){
+const news=DB.get('news').filter(n=>n.status==='online');
+const filtered=cat==='all'?news:news.filter(n=>n.cat===cat);
+document.getElementById('newsGrid').innerHTML=filtered.map(n=>`
+<div class="card news-card" onclick="showNews(${n.id})">
+<div class="news-img">${n.cat==='company'?'🏢':n.cat==='industry'?'📊':'📰'}</div>
+<h4>${n.title}</h4><div class="summary">${n.summary}</div>
+<div class="meta" style="margin-top:12px"><span>📅 ${n.date}</span><span>${n.cat==='company'?'公司动态':n.cat==='industry'?'行业资讯':'媒体报道'}</span></div>
+</div>`).join('');
+}
+document.querySelectorAll('[data-ncat]').forEach(btn=>{
+btn.addEventListener('click',()=>{
+document.querySelectorAll('[data-ncat]').forEach(b=>b.classList.remove('active'));
+btn.classList.add('active');renderNews(btn.dataset.ncat);
+});
+});
+function showNews(id){
+const n=DB.get('news').find(x=>x.id===id);
+if(!n)return;
+document.getElementById('newsDetailContent').innerHTML=`<h3 style="font-size:22px;margin-bottom:12px">${n.title}</h3><div style="color:var(--txt3);font-size:14px;margin-bottom:20px">📅 ${n.date} · ${n.cat==='company'?'公司动态':n.cat==='industry'?'行业资讯':'媒体报道'}</div><p style="color:var(--txt2);line-height:1.8;font-size:15px">${n.content}</p>`;
+openModal('newsDetailModal');
+}
+renderNews();
+
+/* ===== COMMUNITY ===== */
+function renderPosts(cat='all'){
+let posts=DB.get('posts').filter(p=>p.status==='online');
+if(cat==='hot')posts.sort((a,b)=>b.likes-a.likes);
+else if(cat==='latest')posts.sort((a,b)=>new Date(b.time)-new Date(a.time));
+posts.sort((a,b)=>(b.top?1:0)-(a.top?1:0));
+document.getElementById('postList').innerHTML=posts.map(p=>`
+<div class="post-item"><div class="post-info"><h4>${p.top?'📌 ':''}${p.title}</h4><div class="meta">👤 ${p.author} · 🕐 ${p.time}</div></div>
+<div class="post-actions"><span onclick="likePost(${p.id})">👍 ${p.likes}</span><span>💬 ${p.comments}</span><span onclick="reportPost(${p.id})">🚩 举报</span></div></div>`).join('');
+}
+document.querySelectorAll('[data-pcat]').forEach(btn=>{
+btn.addEventListener('click',()=>{
+document.querySelectorAll('[data-pcat]').forEach(b=>b.classList.remove('active'));
+btn.classList.add('active');renderPosts(btn.dataset.pcat);
+});
+});
+function openPostModal(){
+if(!currentUser)return toast('请先登录','error'),openModal('loginModal');
+if(currentUser.status==='muted')return toast('您已被禁言，无法发帖','error');
+openModal('postModal');
+}
+document.getElementById('postForm').onsubmit=e=>{
+e.preventDefault();
+const title=document.getElementById('postTitle').value,content=document.getElementById('postContent').value;
+const sw=DB.get('sensitiveWords');
+if(sw.some(w=>title.includes(w)||content.includes(w)))return toast('内容包含敏感词，请修改','error');
+const posts=DB.get('posts');
+posts.push({id:Date.now(),title,content,author:currentUser.username,time:new Date().toLocaleString(),likes:0,comments:0,status:'pending',top:false});
+DB.set('posts',posts);closeModal('postModal');
+document.getElementById('postTitle').value='';document.getElementById('postContent').value='';
+addLog('发布帖子',title);toast('帖子已提交，等待管理员审核','success');renderPosts();
+};
+function likePost(id){
+const posts=DB.get('posts');const p=posts.find(x=>x.id===id);
+if(p){p.likes++;DB.set('posts',posts);renderPosts(document.querySelector('[data-pcat].active').dataset.pcat)}
+}
+function reportPost(id){toast('举报已提交，管理员将尽快处理','success');addLog('举报帖子','帖子ID:'+id)}
+
+/* ===== FORMS ===== */
+document.getElementById('coopForm').onsubmit=e=>{
+e.preventDefault();
+const coops=DB.get('coops');
+coops.push({id:Date.now(),brand:document.getElementById('coopBrand').value,name:document.getElementById('coopName').value,phone:document.getElementById('coopPhone').value,type:document.getElementById('coopType').value,desc:document.getElementById('coopDesc').value,status:'pending',time:new Date().toLocaleDateString()});
+DB.set('coops',coops);e.target.reset();toast('合作意向已提交，我们将尽快与您联系！','success');addLog('提交合作意向',coops[coops.length-1].brand);
+};
+document.getElementById('creatorForm').onsubmit=e=>{
+e.preventDefault();
+const coops=DB.get('coops');
+coops.push({id:Date.now(),brand:'创作者入驻-'+document.getElementById('crName').value,name:document.getElementById('crName').value,phone:document.getElementById('crPhone').value,type:'创作者入驻',desc:'特长:'+document.getElementById('crSkill').value+' 平台:'+document.getElementById('crPlatform').value,status:'pending',time:new Date().toLocaleDateString()});
+DB.set('coops',coops);e.target.reset();toast('入驻申请已提交，审核通过后将通知您！','success');
+};
+document.getElementById('contactForm').onsubmit=e=>{
+e.preventDefault();
+const msgs=DB.get('messages');
+msgs.push({id:Date.now(),name:document.getElementById('ctName').value,phone:document.getElementById('ctPhone').value,type:document.getElementById('ctType').value,msg:document.getElementById('ctMsg').value,time:new Date().toLocaleString(),status:'unread'});
+DB.set('messages',msgs);e.target.reset();toast('咨询已提交，我们将尽快回复您！','success');
+};
+function openJobApply(title){document.getElementById('jobTitle').textContent=title;openModal('jobModal')}
+document.getElementById('jobForm').onsubmit=e=>{
+e.preventDefault();closeModal('jobModal');e.target.reset();toast('简历已提交，HR将尽快与您联系！','success');
+};
+
+/* ===== LEGAL ===== */
+function showLegal(type){
+const contents={
+terms:'<h3 style="margin-bottom:16px">法律声明</h3><p style="color:var(--txt2);line-height:2;font-size:14px">本网站由衡阳灏妍时代互动文化传媒有限公司运营。网站内容受法律保护，未经许可不得转载。用户在使用本网站服务时，应遵守国家法律法规，不得发布违法违规内容。灏妍传媒保留对网站内容进行修改和更新的权利。</p>',
+privacy:'<h3 style="margin-bottom:16px">隐私政策</h3><p style="color:var(--txt2);line-height:2;font-size:14px">灏妍传媒重视用户隐私保护。我们仅收集提供服务所必需的信息，不会将您的个人信息出售给第三方。您的数据仅存储在本地浏览器中，不会被上传至外部服务器。您可以随时清除浏览器数据以删除所有本地信息。</p>',
+disclaimer:'<h3 style="margin-bottom:16px">免责声明</h3><p style="color:var(--txt2);line-height:2;font-size:14px">本网站展示的数据为演示用途，仅供参考。灏妍传媒不对因使用本网站信息而产生的任何损失承担责任。社区用户发布的内容代表个人观点，不代表灏妍传媒立场。</p>'
+};
+document.getElementById('legalContent').innerHTML=contents[type];
+openModal('legalModal');
+}
+
+/* ===== USER CENTER ===== */
+function openUserCenter(){
+if(!currentUser)return;
+const posts=DB.get('posts').filter(p=>p.author===currentUser.username);
+document.getElementById('userContent').innerHTML=`
+<h3 style="margin-bottom:20px">个人中心</h3>
+<div class="card" style="margin-bottom:16px"><h4 style="margin-bottom:8px">👤 ${currentUser.username}</h4><p style="font-size:13px;color:var(--txt3)">角色：${currentUser.role==='admin'?'管理员':'普通用户'} · 注册时间：${currentUser.created}</p></div>
+<h4 style="margin-bottom:12px">我的帖子 (${posts.length})</h4>
+${posts.length?posts.map(p=>`<div class="post-item"><div class="post-info"><h4>${p.title}</h4><div class="meta">${p.time} · <span class="status-badge status-${p.status==='online'?'active':p.status==='pending'?'pending':'offline'}">${p.status==='online'?'已上线':p.status==='pending'?'待审核':p.status==='rejected'?'已拒绝':'已下线'}</span></div></div></div>`).join(''):'<p style="color:var(--txt3);font-size:14px">暂无帖子</p>'}
+`;
+openModal('userModal');
+}
+
+/* ===== ADMIN ===== */
+function addLog(action,detail){
+const logs=DB.get('logs');
+logs.unshift({time:new Date().toLocaleString(),action,detail,operator:currentUser?currentUser.username:'system'});
+if(logs.length>100)logs.pop();
+DB.set('logs',logs);
+}
+function openAdmin(){
+if(!currentUser||currentUser.role!=='admin')return toast('无权限','error');
+renderAdmin('dashboard');openModal('adminModal');
+}
+function renderAdmin(tab){
+const el=document.getElementById('adminContent');
+const users=DB.get('users'),posts=DB.get('posts'),news=DB.get('news'),coops=DB.get('coops'),logs=DB.get('logs'),msgs=DB.get('messages'),talents=DB.get('talents');
+let html='<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px">';
+const tabs=[['dashboard','📊 仪表盘'],['users','👥 用户管理'],['content','📝 内容管理'],['talents','⭐ 达人管理'],['news','📰 新闻管理'],['coops','🤝 合作申请'],['settings','⚙️ 系统设置'],['logs','📋 操作日志']];
+tabs.forEach(([k,l])=>{html+=`<button class="tab-btn ${tab===k?'active':''}" onclick="renderAdmin('${k}')">${l}</button>`});
+html+='</div>';
+if(tab==='dashboard'){
+html+=`<div class="stat-cards"><div class="stat-card"><div class="val">${users.length}</div><div class="lbl">总用户数</div></div><div class="stat-card"><div class="val">${posts.length}</div><div class="lbl">总帖子数</div></div><div class="stat-card"><div class="val">${posts.filter(p=>p.status==='pending').length}</div><div class="lbl">待审核帖子</div></div><div class="stat-card"><div class="val">${coops.filter(c=>c.status==='pending').length}</div><div class="lbl">待处理合作</div></div></div>`;
+html+=`<h4 style="margin-bottom:12px">最近操作日志</h4><div class="table-wrap"><table><tr><th>时间</th><th>操作人</th><th>操作</th><th>详情</th></tr>${logs.slice(0,10).map(l=>`<tr><td>${l.time}</td><td>${l.operator}</td><td>${l.action}</td><td>${l.detail}</td></tr>`).join('')}</table></div>`;
+}else if(tab==='users'){
+html+=`<div style="margin-bottom:16px"><input type="text" id="userSearch" placeholder="搜索用户..." style="padding:8px 16px;background:var(--bg3);border:1px solid var(--border);border-radius:6px;color:var(--txt);width:250px" oninput="filterUsers()"></div>`;
+html+=`<div class="table-wrap"><table><tr><th>ID</th><th>用户名</th><th>角色</th><th>状态</th><th>注册时间</th><th>操作</th></tr><tbody id="userTableBody">${users.map(u=>userRow(u)).join('')}</tbody></table></div>`;
+}else if(tab==='content'){
+html+=`<div class="table-wrap"><table><tr><th>ID</th><th>标题</th><th>作者</th><th>状态</th><th>点赞</th><th>操作</th></tr>${posts.map(p=>`<tr><td>${p.id}</td><td>${p.top?'📌 ':''}${p.title}</td><td>${p.author}</td><td><span class="status-badge status-${p.status==='online'?'active':p.status==='pending'?'pending':p.status==='rejected'?'banned':'offline'}">${p.status==='online'?'已上线':p.status==='pending'?'待审核':p.status==='rejected'?'已拒绝':'已下线'}</span></td><td>${p.likes}</td><td>
+${p.status==='pending'?`<button class="btn btn-green btn-sm" onclick="modPost(${p.id},'online')">通过</button> <button class="btn btn-danger btn-sm" onclick="modPost(${p.id},'rejected')">拒绝</button>`:''}
+${p.status==='online'?`<button class="btn btn-outline btn-sm" onclick="modPost(${p.id},'offline')">下线</button> <button class="btn btn-outline btn-sm" onclick="modPost(${p.id},'top')">${p.top?'取消置顶':'置顶'}</button>`:''}
+${p.status==='offline'?`<button class="btn btn-green btn-sm" onclick="modPost(${p.id},'online')">上线</button>`:''}
+<button class="btn btn-danger btn-sm" onclick="delPost(${p.id})">删除</button></td></tr>`).join('')}</table></div>`;
+}else if(tab==='talents'){
+html+=`<div class="table-wrap"><table><tr><th>ID</th><th>昵称</th><th>分类</th><th>粉丝</th><th>状态</th><th>操作</th></tr>${talents.map(t=>`<tr><td>${t.id}</td><td>${t.name}</td><td>${t.cat==='top'?'头部达人':t.cat==='live'?'直播主播':t.cat==='video'?'短视频创作者':'电商主播'}</td><td>${t.fans}</td><td><span class="status-badge status-${t.status==='online'?'active':'offline'}">${t.status==='online'?'在线':'下线'}</span></td><td><button class="btn btn-outline btn-sm" onclick="modTalent(${t.id})">${t.status==='online'?'下线':'上线'}</button></td></tr>`).join('')}</table></div>`;
+}else if(tab==='news'){
+html+=`<div style="margin-bottom:16px"><button class="btn btn-gold btn-sm" onclick="openNewsEditor()">+ 发布新闻</button></div>`;
+html+=`<div class="table-wrap"><table><tr><th>ID</th><th>标题</th><th>分类</th><th>日期</th><th>状态</th><th>操作</th></tr>${news.map(n=>`<tr><td>${n.id}</td><td>${n.title}</td><td>${n.cat==='company'?'公司动态':n.cat==='industry'?'行业资讯':'媒体报道'}</td><td>${n.date}</td><td><span class="status-badge status-${n.status==='online'?'active':'offline'}">${n.status==='online'?'已发布':'已下线'}</span></td><td><button class="btn btn-outline btn-sm" onclick="modNews(${n.id})">${n.status==='online'?'下线':'上线'}</button> <button class="btn btn-danger btn-sm" onclick="delNews(${n.id})">删除</button></td></tr>`).join('')}</table></div>`;
+html+=`<div id="newsEditor" style="display:none;margin-top:24px"><h4 style="margin-bottom:16px">发布新闻</h4><form onsubmit="submitNews(event)"><div class="form-row"><div class="form-group"><label>标题</label><input id="neTitle" required></div><div class="form-group"><label>分类</label><select id="neCat"><option value="company">公司动态</option><option value="industry">行业资讯</option><option value="media">媒体报道</option></select></div></div><div class="form-group"><label>摘要</label><input id="neSummary" required></div><div class="form-group"><label>正文</label><textarea id="neContent" rows="4" required></textarea></div><button class="btn btn-gold" type="submit">发布</button></form></div>`;
+}else if(tab==='coops'){
+html+=`<div class="table-wrap"><table><tr><th>品牌/申请人</th><th>联系人</th><th>电话</th><th>类型</th><th>状态</th><th>时间</th><th>操作</th></tr>${coops.map(c=>`<tr><td>${c.brand}</td><td>${c.name}</td><td>${c.phone}</td><td>${c.type}</td><td><span class="status-badge status-${c.status==='pending'?'pending':c.status==='approved'?'active':'banned'}">${c.status==='pending'?'待处理':c.status==='approved'?'已通过':'已拒绝'}</span></td><td>${c.time}</td><td>${c.status==='pending'?`<button class="btn btn-green btn-sm" onclick="modCoop(${c.id},'approved')">通过</button> <button class="btn btn-danger btn-sm" onclick="modCoop(${c.id},'rejected')">拒绝</button>`:'已处理'}</td></tr>`).join('')}</table></div>`;
+}else if(tab==='settings'){
+const anns=DB.get('announcements'),sw=DB.get('sensitiveWords');
+html+=`<div class="grid-2"><div class="card"><h4 style="margin-bottom:16px">📢 公告管理</h4>${anns.map((a,i)=>`<div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:14px">${a}</span><button class="btn btn-danger btn-sm" onclick="delAnn(${i})">删除</button></div>`).join('')}<div style="margin-top:16px;display:flex;gap:12px"><input id="newAnn" placeholder="输入新公告..." style="flex:1;padding:8px 16px;background:var(--bg3);border:1px solid var(--border);border-radius:6px;color:var(--txt)"><button class="btn btn-gold btn-sm" onclick="addAnn()">添加</button></div></div>
+<div class="card"><h4 style="margin-bottom:16px">🚫 敏感词过滤</h4>${sw.map((w,i)=>`<div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)"><span style="font-size:14px">${w}</span><button class="btn btn-danger btn-sm" onclick="delSW(${i})">删除</button></div>`).join('')}<div style="margin-top:16px;display:flex;gap:12px"><input id="newSW" placeholder="输入敏感词..." style="flex:1;padding:8px 16px;background:var(--bg3);border:1px solid var(--border);border-radius:6px;color:var(--txt)"><button class="btn btn-gold btn-sm" onclick="addSW()">添加</button></div></div></div>`;
+}else if(tab==='logs'){
+html+=`<div class="table-wrap"><table><tr><th>时间</th><th>操作人</th><th>操作</th><th>详情</th></tr>${logs.map(l=>`<tr><td>${l.time}</td><td>${l.operator}</td><td>${l.action}</td><td>${l.detail}</td></tr>`).join('')}</table></div>`;
+}
+el.innerHTML=html;
+}
+function userRow(u){return `<tr><td>${u.id}</td><td>${u.username}</td><td>${u.role==='admin'?'管理员':'用户'}</td><td><span class="status-badge status-${u.status==='active'?'active':u.status==='banned'?'banned':'muted'}">${u.status==='active'?'正常':u.status==='banned'?'已封禁':'已禁言'}</span></td><td>${u.created}</td><td>
+${u.role!=='admin'?`<button class="btn btn-outline btn-sm" onclick="modUser(${u.id},'muted')">${u.status==='muted'?'解除禁言':'禁言'}</button> <button class="btn btn-outline btn-sm" onclick="modUser(${u.id},u.status==='banned'?'active':'banned')">${u.status==='banned'?'解封':'封禁'}</button> <button class="btn btn-danger btn-sm" onclick="delUser(${u.id})">删除</button>`:'系统账号'}
+</td></tr>`}
+function filterUsers(){
+const s=document.getElementById('userSearch').value.toLowerCase();
+const users=DB.get('users').filter(u=>u.username.toLowerCase().includes(s));
+document.getElementById('userTableBody').innerHTML=users.map(u=>userRow(u)).join('');
+}
+function modUser(id,action){
+const users=DB.get('users');const u=users.find(x=>x.id===id);
+if(!u)return;u.status=action;DB.set('users',users);addLog('用户管理',`${action==='muted'?'禁言':action==='banned'?'封禁':'解除'}用户 ${u.username}`);renderAdmin('users');toast('操作成功','success');
+}
+function delUser(id){
+if(!confirm('确定删除该用户？'))return;
+let users=DB.get('users');const u=users.find(x=>x.id===id);
+users=users.filter(x=>x.id!==id);DB.set('users',users);addLog('删除用户',u.username);renderAdmin('users');toast('用户已删除','success');
+}
+function modPost(id,action){
+const posts=DB.get('posts');const p=posts.find(x=>x.id===id);
+if(!p)return;
+if(action==='top'){p.top=!p.top}else{p.status=action}
+DB.set('posts',posts);addLog('内容管理',`${action==='online'?'上线':action==='offline'?'下线':action==='rejected'?'拒绝':action==='top'?(p.top?'置顶':'取消置顶'):''}帖子 "${p.title}"`);renderAdmin('content');toast('操作成功','success');
+}
+function delPost(id){
+if(!confirm('确定删除该帖子？'))return;
+let posts=DB.get('posts');posts=posts.filter(x=>x.id!==id);DB.set('posts',posts);addLog('删除帖子','ID:'+id);renderAdmin('content');toast('帖子已删除','success');
+}
+function modTalent(id){
+const talents=DB.get('talents');const t=talents.find(x=>x.id===id);
+if(!t)return;t.status=t.status==='online'?'offline':'online';DB.set('talents',talents);addLog('达人管理',`${t.status==='online'?'上线':'下线'}达人 ${t.name}`);renderAdmin('talents');toast('操作成功','success');
+}
+function modNews(id){
+const news=DB.get('news');const n=news.find(x=>x.id===id);
+if(!n)return;n.status=n.status==='online'?'offline':'online';DB.set('news',news);addLog('新闻管理',`${n.status==='online'?'上线':'下线'}新闻 "${n.title}"`);renderAdmin('news');toast('操作成功','success');
+}
+function delNews(id){
+if(!confirm('确定删除该新闻？'))return;
+let news=DB.get('news');news=news.filter(x=>x.id!==id);DB.set('news',news);addLog('删除新闻','ID:'+id);renderAdmin('news');toast('新闻已删除','success');
+}
+function openNewsEditor(){document.getElementById('newsEditor').style.display='block'}
+function submitNews(e){
+e.preventDefault();
+const news=DB.get('news');
+news.unshift({id:Date.now(),title:document.getElementById('neTitle').value,cat:document.getElementById('neCat').value,date:new Date().toISOString().split('T')[0],summary:document.getElementById('neSummary').value,content:document.getElementById('neContent').value,status:'online'});
+DB.set('news',news);addLog('发布新闻',document.getElementById('neTitle').value);renderAdmin('news');toast('新闻发布成功','success');
+}
+function modCoop(id,action){
+const coops=DB.get('coops');const c=coops.find(x=>x.id===id);
+if(!c)return;c.status=action;DB.set('coops',coops);addLog('合作管理',`${action==='approved'?'通过':'拒绝'}合作申请 ${c.brand}`);renderAdmin('coops');toast('操作成功','success');
+}
+function addAnn(){
+const v=document.getElementById('newAnn').value;if(!v)return;
+const anns=DB.get('announcements');anns.push(v);DB.set('announcements',anns);addLog('添加公告',v);renderAdmin('settings');toast('公告已添加','success');
+}
+function delAnn(i){
+const anns=DB.get('announcements');anns.splice(i,1);DB.set('announcements',anns);renderAdmin('settings');toast('公告已删除','success');
+}
+function addSW(){
+const v=document.getElementById('newSW').value;if(!v)return;
+const sw=DB.get('sensitiveWords');sw.push(v);DB.set('sensitiveWords',sw);addLog('添加敏感词',v);renderAdmin('settings');toast('敏感词已添加','success');
+}
+function delSW(i){
+const sw=DB.get('sensitiveWords');sw.splice(i,1);DB.set('sensitiveWords',sw);renderAdmin('settings');toast('敏感词已删除','success');
+}
+
+/* ===== CHARTS ===== */
+function drawCharts(){
+const bc=document.getElementById('chartBar');
+if(!bc)return;
+const bctx=bc.getContext('2d');
+bc.width=bc.parentElement.clientWidth-56;bc.height=200;
+const data=[32,45,38,52,61,48,72,65,80,75,90,95];
+const labels=['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
+const max=Math.max(...data);
+const bw=(bc.width-40)/data.length;
+bctx.clearRect(0,0,bc.width,bc.height);
+data.forEach((v,i)=>{
+const h=(v/max)*160;
+const grad=bctx.createLinearGradient(0,bc.height-h,0,bc.height);
+grad.addColorStop(0,'#f0b040');grad.addColorStop(1,'#3b82f6');
+bctx.fillStyle=grad;
+bctx.fillRect(20+i*bw,bc.height-h,bw*.6,h);
+bctx.fillStyle='#64748b';bctx.font='10px sans-serif';
+bctx.fillText(labels[i],20+i*bw,bc.height-4);
+});
+const pc=document.getElementById('chartPie');
+if(!pc)return;
+const pctx=pc.getContext('2d');
+pc.width=pc.parentElement.clientWidth-56;pc.height=200;
+const pieData=[{v:25,c:'#f0b040',l:'颜值时尚'},{v:20,c:'#3b82f6',l:'搞笑剧情'},{v:15,c:'#34d399',l:'美食'},{v:12,c:'#8b5cf6',l:'音乐舞蹈'},{v:10,c:'#ec4899',l:'游戏二次元'},{v:10,c:'#22d3ee',l:'知识教育'},{v:8,c:'#f97316',l:'旅行生活'}];
+const cx=pc.width/2,cy=100,r=70;
+let start=-Math.PI/2;
+pieData.forEach(d=>{
+const angle=(d.v/100)*Math.PI*2;
+pctx.beginPath();pctx.moveTo(cx,cy);pctx.arc(cx,cy,r,start,start+angle);pctx.closePath();pctx.fillStyle=d.c;pctx.fill();
+start+=angle;
+});
+pctx.beginPath();pctx.arc(cx,cy,35,0,Math.PI*2);pctx.fillStyle='#151c2e';pctx.fill();
+pctx.fillStyle='#e2e8f0';pctx.font='bold 14px sans-serif';pctx.textAlign='center';pctx.fillText('垂类分布',cx,cy+5);
+let ly=20;
+pieData.forEach(d=>{
+pctx.fillStyle=d.c;pctx.fillRect(pc.width-120,ly,10,10);
+pctx.fillStyle='#94a3b8';pctx.font='11px sans-serif';pctx.textAlign='left';
+pctx.fillText(`${d.l} ${d.v}%`,pc.width-105,ly+9);ly+=18;
+});
+}
+setTimeout(drawCharts,500);
+window.addEventListener('resize',()=>setTimeout(drawCharts,200));
+
+/* ===== INIT ===== */
+updateNav();
+renderPosts();
+</script>
+</body>
+</html>
